@@ -16,13 +16,11 @@
 	border-color: #1b262c;
 }
 .imgmenunav{
-	background-image:url("/imagenes_inicio/img1.jpg");
+	background-image:url("../imagenes_inicio/img1.jpg");
 	height: auto;
 	background-position: center;
 	background-attachment: contain;
 	background-size: cover;
-	display: flex;
-	flex-flow: column nowrap;
 }
 
 nav.navbar {
@@ -32,17 +30,30 @@ background-color: rgba(10, 168, 204, 0.5)!important;
 .menunav a{
 	font-size: 20px;
 	color:#142850 !important;/*letra nav*/
-	
-}
-.menuser a{
-	text-decoration:underline !important;
-	text-decoration-color: #0c7b93 !important;
+
 }
 
 /*--------------*/
 
+.menunav a:hover{
+	color:white !important;
+}
+/*
+.container0 {
+	animation-name: example;
+  animation-duration: 10s;
+}
+@keyframes example {
+  20%   {background-color: red;}
+	30%   {background-color: aqua;}
+	50%  {background-color: yellow;}
+  80%  {background-color: blue;}
+  100% {background-color: green;}
+}
+*/
 
-/*---------pictures--------*/
+
+/*---------pictures--------------------------------------------------------------*/
 .container1{
 	width: 90% !important;
 	background: #0c7b93;/*imgenes*/
@@ -50,6 +61,7 @@ background-color: rgba(10, 168, 204, 0.5)!important;
 	padding: 10px;
 	border: 5px solid;
 	border-color: #1b262c;
+
 }
 .container1 img{
 	border: 3px solid;
@@ -58,22 +70,44 @@ background-color: rgba(10, 168, 204, 0.5)!important;
 .brdtextimg{
 	padding: 20px;
 }
+.btnsize{
+	width:200px;
+}
+
+.container1 img{
+	cursor:zoom-in;
+}
+
 /*----------------------*/
+.container1 button:hover{
+	background: black !important;
+	color:white;
+}
 
 
-
-/*------footer----------*/
-.containe2{
-	width: 90%;
-	background: white;
+/*------footer--------------------------------------------------------------------*/
+.container2{
+	background-image:url("../imagenes_inicio/img1.jpg");
+	height: auto;
+	background-position: center;
+	background-attachment: contain;
+	background-size: cover;
 	margin: 0 auto;
 	border: 5px solid;
 	border-color: #1b262c;
+	color:white;
+	width: 90%;
 }
-.colorredes{
-	background: rgba(10, 168, 204, 0.5)!important;
 
-}
+/*.container2{
+	width: 90%;
+ background: rgba(10, 168, 204, 0.5)!important;
+	margin: 0 auto;
+	border: 5px solid;
+	border-color: #1b262c;
+	color:white;
+}*/
+
 .redesocial{
 	border-color: #1b262c;
 	text-align: center;
@@ -82,4 +116,9 @@ background-color: rgba(10, 168, 204, 0.5)!important;
 }
 .iconosredes{
 	justify-content: center;
+}
+
+/*---------------------*/
+.container2 i:hover{
+	color: #0c7b93;
 }
