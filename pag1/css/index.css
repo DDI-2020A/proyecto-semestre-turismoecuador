@@ -52,6 +52,11 @@ background-color: rgba(10, 168, 204, 0.5)!important;
 }
 */
 
+/***Justificar parrafos***/
+.txt-justify{
+	text-align: justify;
+}
+
 
 /*---------pictures--------------------------------------------------------------*/
 .container1{

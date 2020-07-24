@@ -14,8 +14,9 @@ html, body{
 }
 
 .contenedor{
-	width: 25em;
-	height: 20em;
+	width: 27em;
+	height: 22em;
+	padding: 40px;
 }
 
 .fg1{
