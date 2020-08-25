@@ -1,0 +1,16 @@
+@import '~antd/dist/antd.css';
+
+.ConoceJuega {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*footer*/
+.footer-color a, h3, p{
+  color: #FDFFFC;
+  margin: 0px;
+}
+
+.footer-color2{
+  color: #7F8B92;
+}
