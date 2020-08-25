@@ -4,7 +4,7 @@ import Footer from '../Components/Footer';
 import CardInformation from '../Components/CardInformation';
 import FontSlider from '../Components/FontSlider';
 import Item from "../Components/Item";
-
+import Nav from "./Nav";
 function App() {
 
     return (
