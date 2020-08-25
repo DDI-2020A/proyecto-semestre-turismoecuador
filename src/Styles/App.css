@@ -41,3 +41,23 @@
 .footer-color2{
   color: #7F8B92;
 }
+
+.logo{
+  margin-left: 5px;
+
+}
+.Nav{
+  background-color: #011627;
+  color: #FDFFFC;
+}
+#Nav a{
+  color: #FDFFFC;
+}
+.login{
+  padding: 6px;
+  background-color: #40A9FF;
+}
+.register{
+  padding: 6px;
+  border: solid #FDFFFC 1px ;
+}
