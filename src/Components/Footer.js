@@ -18,7 +18,7 @@ function Footer() {
                         <h3>Accesos</h3>
                         <p><a>Conoce</a></p>
                         <p><a>Juega</a></p>
-                        <p><a>¿Quienes Somos?</a></p>
+                        <p><a>¿Quiénes Somos?</a></p>
                     </Col>
                     <Col span={8}>
                         <Tooltip title="Facebook">

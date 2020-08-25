@@ -1,8 +1,35 @@
 @import '~antd/dist/antd.css';
 
+
+/*cardInformation*/
+
 .ConoceJuega {
   display: flex;
   flex-wrap: wrap;
+}
+
+.image {
+  padding: 3% 5% 0% 10%;
+}
+
+.description {
+  padding: 3% 5% 0% 10%;
+}
+
+.description-juega {
+  padding: 10% 10% 0% 0%;
+}
+
+.button-conoce-juega {
+  margin-top: 6%;
+}
+
+.tama-image {
+  max-height: 250px;
+}
+
+.tama-carousel {
+  max-width: 500px;
 }
 
 /*footer*/
