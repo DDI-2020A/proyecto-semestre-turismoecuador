@@ -3,6 +3,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 10px solid white;
+    padding-top: 10px;
    
   }
   .image-size{
@@ -90,3 +92,7 @@
     padding: 20px;
   }
 
+  .slider-font{
+    background-color: #96E2D9;
+    padding:20px;
+}

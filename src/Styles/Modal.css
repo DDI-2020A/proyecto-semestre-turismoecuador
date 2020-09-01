@@ -1,0 +1,104 @@
+.modal-wrapper {
+    border: 1px solid #011627;
+    box-shadow: 0 15px 17px 0 rgba(0,0,0,0.9), 0 12px 25px 0 rgba(0,0,0,0.9);
+    margin: 100px auto 0;
+    transition: all .8s;
+    width: 80%;
+    background-image:url("../Images/img1.jpg");
+    height: auto;
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+    border-radius: 10px;
+}
+.modal-header {
+    background:#96E2D9;
+    opacity: 0.7;
+    height: 50px;
+    line-height: 40px;
+    padding: 5px 20px;
+    text-align: right;
+    border-radius: 10px;
+
+}
+.modal-header h3 {
+    color:#011627;
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-weight: bolder;
+}
+
+.modal-body {
+    padding: 10px 15px;
+    text-align: center;
+}
+.modal-footer {
+    background: #96E2D9;
+    opacity: 0.8;
+    height: 35px;
+    padding: 15px;
+    border-radius: 10px;
+}
+.close-modal-btn {
+    color:#FF9F1C;
+    opacity: 1 !important;
+    cursor: pointer;
+    float: right;
+    font-size: 30px;
+    margin: 0;
+}
+.close-modal-btn:hover {
+    color:#011627;
+}
+.btn-cancel, .btn-continue {
+    background:#FF9F1C ;
+    border:2px solid white;
+    color: white;
+    opacity: 1 !important;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    padding-bottom: 10px ;
+    text-align: center; 
+}
+
+.btn-cancel {
+    background-color:#011627;
+    float: left;
+}
+.btn-cancel:hover{
+    background-color:#E71D36;
+    color: white;
+    border-color: #E71D36;
+}
+
+.btn-continue:hover{
+    background-color:#E71D36;
+    color: white;
+    border-color: #E71D36;   
+}
+.main-provincia{
+    height: 500px;
+    padding: 20px; 
+    border-radius: 5px;
+    border:5px solid white;
+}
+
+.color-btn-answer{
+    background-color:#E71D36;
+    color: white;
+    border-color: white;
+    border-radius: 3px;  
+}
+.color-btn-answer:hover{
+    background-color:#011627;
+    color: #96E2D9;
+    border-color: #96E2D9;
+}
+.modal-questions{
+     background-color: #96E2D9;
+     padding:20px;
+}
