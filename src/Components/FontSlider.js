@@ -27,7 +27,7 @@ function FontSlider(){
           <Item><div className="fondo-imagen4"><h6 className="title-image">fotografia : Mario Scheammborn</h6></div></Item>
           <Item><div className="fondo-imagen5"><h6 className="title-image">fotografia : Marisa04</h6></div></Item>
           <Item><div className="fondo-imagen6"><h6 className="title-image">fotografia : PublicDomainPicture</h6></div></Item>
-          <Item><div ></div></Item>
+          
         </Carousel>
       </div>
       </div>
