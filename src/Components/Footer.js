@@ -3,6 +3,8 @@ import '../Styles/App.css';
 import {Layout, Button, Tooltip, Divider} from 'antd';
 import {Row, Col} from 'antd';
 import {FacebookFilled, InstagramOutlined, TwitterOutlined, MailFilled} from '@ant-design/icons';
+import Routes from "../Constants/routes";
+import {Link} from "react-router-dom";
 
 function Footer() {
     const {Footer} = Layout;
@@ -14,13 +16,18 @@ function Footer() {
                 className={'footer-color'}
             >
                 <Row style={{textAlign: 'center'}}>
-                    <Col span={8}>
+                    <Col xs={24} sm={4} md={6} lg={8} xl={10}
+                         style={{marginTop: '15px'}}
+                    >
                         <h3>Accesos</h3>
-                        <p><a>Conoce</a></p>
-                        <p><a>Juega</a></p>
-                        <p><a>¿Quiénes Somos?</a></p>
+                        <p><Link to={Routes.FORUM}>Conoce</Link></p>
+                        <p><Link to={Routes.GAME}>Juega</Link></p>
+                        <p><Link to={Routes.ABOUT}>Nosotros</Link></p>
                     </Col>
-                    <Col span={8}>
+                    <Col xs={24} sm={16} md={12} lg={8} xl={4}
+                         style={{marginTop: '15px'}}
+                    >
+                        <h3>Contactanos</h3>
                         <Tooltip title="Facebook">
                             <Button
                                 shape="circle"
@@ -63,7 +70,9 @@ function Footer() {
                         </Tooltip>
 
                     </Col>
-                    <Col span={8}>
+                    <Col xs={24} sm={4} md={6} lg={8} xl={10}
+                         style={{marginTop: '15px'}}
+                    >
                         <p>Orgullosamente hecho en Ecuador</p>
                     </Col>
                 </Row>
