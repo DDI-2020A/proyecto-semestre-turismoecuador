@@ -1,10 +1,9 @@
 import React from "react";
+import LoginForm from "../Components/LoginForm";
 
 const Login = () => {
     return (
-        <>
-            <div>Inicio de Sesion</div>
-        </>
+            <LoginForm/>
     );
 };
 export default Login;
