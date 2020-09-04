@@ -2,7 +2,7 @@ import React from "react";
 import Routes from "../Constants/routes";
 import {Link} from 'react-router-dom';
 import '../Styles/Login.css'
-import {Form, Input, Button, Checkbox, Row, Col} from 'antd';
+import {Form, Input, Button, Row, Col} from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 
 
@@ -25,11 +25,11 @@ const LoginForm = () => {
                     </div>
                     <Form
                         name="normal_login"
-                        className="login-form"
                         initialValues={{ remember: true }}
                         onFinish={onFinish}
                     >
                         <Form.Item
+                            className={'login-form'}
                             name="email"
                             rules={[{ required: true, message: 'Por favor ingresa tu correo!' }]}
                         >
