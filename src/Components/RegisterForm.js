@@ -2,12 +2,9 @@ import React, {useState} from 'react';
 import {
     Form,
     Input,
-    Tooltip,
-    Cascader,
     Select,
     Row,
     Col,
-    Checkbox,
     Button,
     AutoComplete,
 } from 'antd';
@@ -17,41 +14,6 @@ import Routes from "../Constants/routes";
 
 const {Option} = Select;
 const AutoCompleteOption = AutoComplete.Option;
-
-const residences = [
-    {
-        value: 'zhejiang',
-        label: 'Zhejiang',
-        children: [
-            {
-                value: 'hangzhou',
-                label: 'Hangzhou',
-                children: [
-                    {
-                        value: 'xihu',
-                        label: 'West Lake',
-                    },
-                ],
-            },
-        ],
-    },
-    {
-        value: 'jiangsu',
-        label: 'Jiangsu',
-        children: [
-            {
-                value: 'nanjing',
-                label: 'Nanjing',
-                children: [
-                    {
-                        value: 'zhonghuamen',
-                        label: 'Zhong Hua Men',
-                    },
-                ],
-            },
-        ],
-    },
-];
 
 const formItemLayout = {
     labelCol: {
@@ -134,7 +96,7 @@ const RegisterForm = () => {
                         </Form.Item>
                         <Form.Item
                             name="lastname"
-                            rules={[{required: false, message: 'Por favor ingresa tu apellido!'}]}
+                            rules={[{required: true, message: 'Por favor ingresa tu apellido!'}]}
                         >
                             <Input placeholder={'Apellido'}/>
                         </Form.Item>
@@ -196,7 +158,7 @@ const RegisterForm = () => {
 
                         <Form.Item
                             name="nickname"
-                            rules={[{required: true, message: 'Por favor ingresa tu apodo!', whitespace: true}]}
+                            rules={[{required: false, whitespace: true}]}
                         >
                             <Input
                                 placeholder={'Apodo'}
