@@ -1,19 +1,16 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
     Form,
     Input,
-    Select,
     Row,
     Col,
     Button,
-    AutoComplete,
+    message
 } from 'antd';
 import '../Styles/Login.css'
 import {Link} from "react-router-dom";
 import Routes from "../Constants/routes";
-
-const {Option} = Select;
-const AutoCompleteOption = AutoComplete.Option;
+import FIREBASE from "../Firebase";
 
 const formItemLayout = {
     labelCol: {
@@ -39,35 +36,66 @@ const tailFormItemLayout = {
 };
 
 const RegisterForm = () => {
+
+    const [dataSource, setDataSource] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+
     const [form] = Form.useForm();
 
-    const onFinish = values => {
-        console.log('Received values of form: ', values);
-    };
+    useEffect(() => {
+        const getUsers = async () => {
+            FIREBASE.db.ref('users').on('value', (snapshot) => {
+                // console.log( 'datos', snapshot.val() );
+                const usersData = [];
+                snapshot.forEach((data) => {
+                    console.log('user', data.val());
+                    const user = data.val();
+                    const userId = data.key;
+                    usersData.push({
+                        key: userId,
+                        email: user.email,
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                        nickname: user.nickname
+                    });
+                });
+                console.log('usersData', usersData);
+                setDataSource(usersData);
+                setIsLoading(false);
+            });
+        };
+        getUsers();
 
-    const prefixSelector = (
-        <Form.Item name="prefix" noStyle>
-            <Select style={{width: 70}}>
-                <Option value="86">+86</Option>
-                <Option value="87">+87</Option>
-            </Select>
-        </Form.Item>
-    );
+        return () => {
+            FIREBASE.db.ref('users').off();
+        };
+    }, []);
 
-    const [autoCompleteResult, setAutoCompleteResult] = useState([]);
+    const handleRegister = async (values) => {
+        try {
+            await FIREBASE.auth.createUserWithEmailAndPassword(values.email, values.password);
+            console.log('form values', values);
+            console.log('Usuario UID: ', FIREBASE.auth.currentUser.uid)
 
-    const onWebsiteChange = value => {
-        if (!value) {
-            setAutoCompleteResult([]);
-        } else {
-            setAutoCompleteResult(['.com', '.org', '.net'].map(domain => `${value}${domain}`));
+            await FIREBASE.db.ref(`users/${FIREBASE.auth.currentUser.uid}`).set({
+                email: values.email.toLowerCase(),
+                firstName: values.firstName.toUpperCase(),
+                lastName: values.lastName.toUpperCase(),
+                nickname: values.nickname.toUpperCase(),
+                password: values.password.toUpperCase()
+            });
+            message.success('Los datos se guardaron correctamente :)');
+
+
+
+        } catch (error) {
+            // Handle Errors here.
+            let errorCode = error.code;
+            let errorMessage = error.message;
+
+            message.error(errorMessage);
         }
     };
-
-    const websiteOptions = autoCompleteResult.map(website => ({
-        label: website,
-        value: website,
-    }));
 
     return (
         <div style={{backgroundColor: '#96E2D9'}}>
@@ -81,7 +109,7 @@ const RegisterForm = () => {
                         form={form}
                         name="register"
                         className={'login-form'}
-                        onFinish={onFinish}
+                        onFinish={handleRegister}
                         initialValues={{
                             residence: ['zhejiang', 'hangzhou', 'xihu'],
                             prefix: '86',
@@ -89,13 +117,13 @@ const RegisterForm = () => {
                         scrollToFirstError
                     >
                         <Form.Item
-                            name="name"
+                            name="firstName"
                             rules={[{required: true, message: 'Por favor ingresa tu nombre!'}]}
                         >
                             <Input placeholder={'Nombre'}/>
                         </Form.Item>
                         <Form.Item
-                            name="lastname"
+                            name="lastName"
                             rules={[{required: true, message: 'Por favor ingresa tu apellido!'}]}
                         >
                             <Input placeholder={'Apellido'}/>
@@ -158,7 +186,7 @@ const RegisterForm = () => {
 
                         <Form.Item
                             name="nickname"
-                            rules={[{required: false, whitespace: true}]}
+                            rules={[{required: true, message: 'Por favor ingresa un Apodo', whitespace: true}]}
                         >
                             <Input
                                 placeholder={'Apodo'}

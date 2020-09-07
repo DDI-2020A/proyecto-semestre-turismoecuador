@@ -2,8 +2,9 @@ import React from "react";
 import Routes from "../Constants/routes";
 import {Link} from 'react-router-dom';
 import '../Styles/Login.css'
-import {Form, Input, Button, Row, Col} from 'antd';
+import {Form, Input, Button, Row, Col, message} from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import FIREBASE from "../Firebase";
 
 
 const LoginForm = () => {
@@ -14,6 +15,19 @@ const LoginForm = () => {
 
     const onFinishFailed = errorInfo => {
         console.log('Failed:', errorInfo);
+    };
+    const handleLogin = async ({email, password}) => {
+        try {
+            await FIREBASE.auth.signInWithEmailAndPassword(email, password);
+            console.log('Succesful');
+
+        } catch (error) {
+            // Handle Errors here.
+            let errorCode = error.code;
+            let errorMessage = error.message;
+
+            message.error(errorMessage);
+        }
     };
 
     return (
@@ -26,7 +40,7 @@ const LoginForm = () => {
                     <Form
                         name="normal_login"
                         initialValues={{ remember: true }}
-                        onFinish={onFinish}
+                        onFinish={handleLogin}
                     >
                         <Form.Item
                             className={'login-form'}
