@@ -3,10 +3,14 @@ import {Menu, Row, Col, Image} from 'antd';
 import {Link} from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
 import Routes from "../Constants/routes";
+import FIREBASE from "../Firebase";
 
-const Nav = () => {
+const Nav = ({hoverBackground, linkColor, navLinks, logo}) => {
     let location = useLocation();
     const [currentPage, setCurrentPage] = useState('home');
+
+    const [navOpen, setNavOpen] = useState(0)
+    const [hoverIndex, setHoverIndex] = useState(-1)
 
     useEffect(() => {
         console.log('location', location.pathname.split('/'));
@@ -16,27 +20,38 @@ const Nav = () => {
             : 'home');
     }, []);
 
-    return (
-        <Menu theme='dark'
-              onClick={(e) => setCurrentPage(e.key)}
-              selectedKeys={[currentPage]}
-              mode='horizontal'>
 
-            <Menu.Item key='home'>
-                <Link to={Routes.HOME}>ECUADORFFF</Link>
-            </Menu.Item>
-            <Menu.Item key='game'>
-                <Link to={Routes.GAME}>Juega</Link>
-            </Menu.Item>
-            <Menu.Item key='forum'>
-                <Link to={Routes.FORUM}>Conoce</Link>
-            </Menu.Item>
-            <Menu.Item key='login'>
-                <Link to={Routes.LOGIN}>Iniciar Sesión</Link>
-            </Menu.Item>
-            <Menu.Item key='register'>
-                <Link to={Routes.REGISTER}>Registrarse</Link>
-            </Menu.Item>
+    return (
+
+        <Menu
+            theme='dark'
+            onClick={(e) => setCurrentPage(e.key)}
+            selectedKeys={[currentPage]}
+            mode='horizontal'>
+            <Image src={logo} height="40px" width="40px" alt="toolbar-logo"/>
+            {navLinks.map((link, index) =>
+                <Menu.Item
+                    key={index}
+                    onMouseEnter={() => {
+                        setHoverIndex(index)
+                    }}
+                    onMouseLeave={() => {
+                        setHoverIndex(-1)
+                    }}
+                    style={{background: hoverIndex === index ? (hoverBackground || '#fff') : ''}}
+                >
+                    <Link
+                        to={link.path}
+                        onClick={
+                            link.text === 'Salir'
+                                ? () => FIREBASE.auth.signOut()
+                                :null
+                        }
+                        style={{color: linkColor}}
+                    >   {link.text}
+                    </Link>
+                </Menu.Item>
+            )}
 
         </Menu>
     );

@@ -46,10 +46,8 @@ const RegisterForm = () => {
     useEffect(() => {
         const getUsers = async () => {
             FIREBASE.db.ref('users').on('value', (snapshot) => {
-                // console.log( 'datos', snapshot.val() );
                 const usersData = [];
                 snapshot.forEach((data) => {
-                    console.log('user', data.val());
                     const user = data.val();
                     const userId = data.key;
                     usersData.push({
@@ -75,9 +73,6 @@ const RegisterForm = () => {
     const handleRegister = async (values) => {
         try {
             await FIREBASE.auth.createUserWithEmailAndPassword(values.email, values.password);
-            console.log('form values', values);
-            console.log('Usuario UID: ', FIREBASE.auth.currentUser.uid)
-
             await FIREBASE.db.ref(`users/${FIREBASE.auth.currentUser.uid}`).set({
                 email: values.email.toLowerCase(),
                 firstName: values.firstName.toUpperCase(),
@@ -187,24 +182,24 @@ const RegisterForm = () => {
                         <Form.Item
                             name="nickname"
                             rules={[{required: true, message: 'Por favor ingresa un Apodo', whitespace: true}]}
-                            >
+                        >
                             <Input
                                 placeholder={'Apodo'}
                             />
-                    </Form.Item>
-                    <Form.Item {...tailFormItemLayout}>
-                        <Button type="primary" htmlType="submit" className={'login-form-button'}>
-                            Registrarse
-                        </Button>
-                        <p>¿Ya tienes una cuenta? <Link to={Routes.LOGIN}> Inicia Sesión!</Link></p>
-                    </Form.Item>
-                </Form>
-            </Col>
-        </Row>
-    <Row> </Row>
-</div>
-)
-    ;
+                        </Form.Item>
+                        <Form.Item {...tailFormItemLayout}>
+                            <Button type="primary" htmlType="submit" className={'login-form-button'}>
+                                Registrarse
+                            </Button>
+                            <p>¿Ya tienes una cuenta? <Link to={Routes.LOGIN}> Inicia Sesión!</Link></p>
+                        </Form.Item>
+                    </Form>
+                </Col>
+            </Row>
+            <Row> </Row>
+        </div>
+    )
+        ;
 };
 
 export default RegisterForm;
