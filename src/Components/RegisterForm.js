@@ -4,6 +4,7 @@ import {
     Input,
     Row,
     Col,
+    Checkbox,
     Button,
     message
 } from 'antd';
@@ -85,7 +86,6 @@ const RegisterForm = () => {
                 password: values.password.toUpperCase()
             });
             message.success('Los datos se guardaron correctamente :)');
-
 
 
         } catch (error) {
@@ -187,23 +187,24 @@ const RegisterForm = () => {
                         <Form.Item
                             name="nickname"
                             rules={[{required: true, message: 'Por favor ingresa un Apodo', whitespace: true}]}
-                        >
+                            >
                             <Input
                                 placeholder={'Apodo'}
                             />
-                        </Form.Item>
-                        <Form.Item {...tailFormItemLayout}>
-                            <Button type="primary" htmlType="submit" className={'login-form-button'}>
-                                Registrarse
-                            </Button>
-                            <p>¿Ya tienes una cuenta? <Link to={Routes.LOGIN}> Inicia Sesión!</Link></p>
-                        </Form.Item>
-                    </Form>
-                </Col>
-            </Row>
-            <Row> </Row>
-        </div>
-    );
+                    </Form.Item>
+                    <Form.Item {...tailFormItemLayout}>
+                        <Button type="primary" htmlType="submit" className={'login-form-button'}>
+                            Registrarse
+                        </Button>
+                        <p>¿Ya tienes una cuenta? <Link to={Routes.LOGIN}> Inicia Sesión!</Link></p>
+                    </Form.Item>
+                </Form>
+            </Col>
+        </Row>
+    <Row> </Row>
+</div>
+)
+    ;
 };
 
 export default RegisterForm;
