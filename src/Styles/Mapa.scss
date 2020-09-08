@@ -1,0 +1,102 @@
+.main-mapa{
+    background:#96E2D9;
+    display:flex;
+    border:5px solid #011627;
+    padding: 50px;
+
+}
+svg{
+    height: auto;
+    width: auto;
+}
+.mapa-comp{
+    margin:0 auto;
+}
+.main-mapa path{
+    fill:white;
+    stroke:#011627;
+    stroke-width:2px;
+    transition:fill 0.3s;
+  
+}
+.main-mapa path:hover{
+    fill:white !important;
+    stroke-linejoin: bevel;
+}
+ 
+#ECU1{
+    
+    fill:#F8AF93;;
+
+}
+#ECU2{
+    fill: #F7B150;
+    
+}
+#ECU3{
+    fill:#F8AF93;
+}
+#ECU4{
+    fill:#F8AF93;;
+}
+#ECU5{
+    fill:#F8AF93;
+}
+#ECU6{
+    fill:#F8AF93;
+}
+#ECU7{
+    fill:#F8AF93;
+}
+#ECU8{
+    fill:#F7B150;
+}
+#ECU9{
+    fill:#F8AF93;
+}
+#ECU10{
+    fill:#F7B150;
+}
+#ECU11{
+    fill:#F8AF93;
+}
+#ECU12{
+    fill:#42D793;
+    
+}
+#ECU13{
+    fill:#42D793;
+}
+#ECU14{
+    fill:#F8AF93;
+}
+#ECU15{
+    fill:#42D793;
+}
+#ECU16{
+    fill:#42D793;
+}
+#ECU17{
+    fill:#F8AF93;
+}
+#ECU18{
+    fill: #F7B150;
+}
+#ECU19{
+    fill:#F8AF93;
+}
+#ECU20{
+    fill:#F8AF93;
+}
+#ECU21{
+    fill:#42D793;
+}  
+#ECU22{
+    fill: #F7B150;
+}
+#ECU23{
+    fill:#F7B150;
+}
+#ECU24{
+    fill:#42D793;
+}
