@@ -1,21 +1,13 @@
 .carousel{
-    border:2px solid #011627;
     position: relative;
-    width: 100%;
-    background-size: cover;
+    width: 100%;   
     box-sizing: border-box;
     margin:0;
     padding: 0;
     display:flex;
+    max-height:100vh;
     align-items: center;
     overflow:hidden;
-    background:#96E6D9;
-
-	background-position: center;
-	background-attachment: contain;
-
-
-
 }
 .slide{
     border:1px solid white;
