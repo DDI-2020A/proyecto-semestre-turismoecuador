@@ -1,33 +1,58 @@
-.main-mapa{
-    background:#96E2D9;
-    display:flex;
-    border:5px solid #011627;
-    padding: 50px;
-
-}
-svg{
-    height: auto;
-    width: auto;
-}
-.mapa-comp{
+.container-mapag{
     margin:0 auto;
+    height: 500px;
+   position: relative;
+   transform: translateY(25%); 
 }
-.main-mapa path{
+.mapa-galapagos{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+.mapa-ecuador{
+    display:flex;
+    padding-right:5px ;
+    padding-left:5px ;
+    padding-top: 0;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    
+}
+.mapa-ruta{
+    background:#96E2D9;
+     justify-content: center;
+    
+}
+
+
+.mapa-galapagos path{
     fill:white;
     stroke:#011627;
     stroke-width:2px;
     transition:fill 0.3s;
-  
 }
-.main-mapa path:hover{
+.mapa-ecuador path{
+    fill:white;
+    stroke:#011627;
+    stroke-width:2px;
+    transition:fill 0.3s;
+}
+
+.mapa-galapagos path:hover{
     fill:white !important;
     stroke-linejoin: bevel;
 }
- 
+.mapa-ecuador path:hover{
+    fill:white !important;
+    stroke-linejoin: bevel;
+}
+
+
 #ECU1{
     
     fill:#F8AF93;;
-
 }
 #ECU2{
     fill: #F7B150;
@@ -100,3 +125,4 @@ svg{
 #ECU24{
     fill:#42D793;
 }
+
