@@ -129,7 +129,7 @@ const RegisterForm = () => {
                             rules={[
                                 {
                                     type: 'email',
-                                    message: 'El correo no es valido!',
+                                    message: 'El correo no es válido!',
                                 },
                                 {
                                     required: true,
