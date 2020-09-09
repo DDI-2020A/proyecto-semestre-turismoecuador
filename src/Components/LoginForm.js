@@ -65,7 +65,7 @@ const LoginForm = () => {
                             <Button type="primary" htmlType="submit" className="login-form-button">
                                 Iniciar Sesión
                             </Button>
-                            <p>¿Todavia no tienes una cuenta? <Link to={Routes.REGISTER}> Registrate!</Link></p>
+                            <p>¿Todavía no tienes una cuenta? <Link to={Routes.REGISTER}> Regístrate!</Link></p>
                         </Form.Item>
                     </Form>
 
