@@ -27,7 +27,7 @@ function Footer() {
                     <Col xs={24} sm={16} md={12} lg={8} xl={4}
                          style={{marginTop: '15px'}}
                     >
-                        <h3>Contactanos</h3>
+                        <h3>Contáctanos</h3>
                         <Tooltip title="Facebook">
                             <Button
                                 shape="circle"
