@@ -4,13 +4,13 @@
    position: relative;
    transform: translateY(25%); 
 }
-.mapa-galapagos{
+.map-galapagos{
     display:flex;
     align-items: center;
     justify-content: center;
     border: 1px solid black;
 }
-.mapa-ecuador{
+.map-ecuador{
     display:flex;
     padding-right:5px ;
     padding-left:5px ;
@@ -18,51 +18,67 @@
     align-items: center;
     justify-content: center;
     border: 1px solid black;
-    
 }
-.mapa-ruta{
-    background:#96E2D9;
-     justify-content: center;
-    
+.map-route{
+    background:white;
+     justify-content: center; 
 }
 
 
-.mapa-galapagos path{
-    fill:white;
+.map-galapagos path{ 
+    stroke:white;
     stroke:#011627;
     stroke-width:2px;
     transition:fill 0.3s;
 }
-.mapa-ecuador path{
-    fill:white;
+.map-ecuador path{
     stroke:#011627;
     stroke-width:2px;
     transition:fill 0.3s;
 }
-
-.mapa-galapagos path:hover{
+.map-galapagos path:hover{
+    fill:yellow !important;
+    stroke:#42D793;
+    stroke-linejoin: bevel;
+    transform-style: preserve-3d;
+}
+.map-ecuador path:hover{
     fill:white !important;
     stroke-linejoin: bevel;
+    stroke-width: 3px;
+    transform-style: preserve-3d;
 }
-.mapa-ecuador path:hover{
-    fill:white !important;
-    stroke-linejoin: bevel;
+.line-route{
+    fill:rgb(173, 51, 197);
+    stroke:blue;
 }
+.line-route path {
+    stroke:rgb(173, 51, 197) !important;
+      fill:blue;
+}   
+
+.line-route path:hover {
+      stroke:blue !important;
+        fill:blue;
+}   
+
+.line-route circle:hover {
+    stroke:blue !important;
+    fill:blue;
+}   
 
 
-#ECU1{
-    
+#ECU1{   
     fill:#F8AF93;;
 }
 #ECU2{
-    fill: #F7B150;
-    
+    fill:#F7B150;    
 }
 #ECU3{
     fill:#F8AF93;
 }
 #ECU4{
-    fill:#F8AF93;;
+    fill:#42D793;
 }
 #ECU5{
     fill:#F8AF93;
@@ -77,7 +93,7 @@
     fill:#F7B150;
 }
 #ECU9{
-    fill:#F8AF93;
+    fill:#F7B150;
 }
 #ECU10{
     fill:#F7B150;
@@ -87,7 +103,6 @@
 }
 #ECU12{
     fill:#42D793;
-    
 }
 #ECU13{
     fill:#42D793;
@@ -99,10 +114,10 @@
     fill:#42D793;
 }
 #ECU16{
-    fill:#42D793;
+    fill:#F8AF93;
 }
 #ECU17{
-    fill:#F8AF93;
+    fill:#42D793;
 }
 #ECU18{
     fill: #F7B150;
@@ -125,4 +140,3 @@
 #ECU24{
     fill:#42D793;
 }
-
