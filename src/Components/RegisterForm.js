@@ -4,7 +4,6 @@ import {
     Input,
     Row,
     Col,
-    Checkbox,
     Button,
     message
 } from 'antd';
@@ -61,6 +60,8 @@ const RegisterForm = () => {
                 console.log('usersData', usersData);
                 setDataSource(usersData);
                 setIsLoading(false);
+                console.log('dataSource', dataSource);
+                console.log('isLoding', isLoading);
             });
         };
         getUsers();
@@ -78,14 +79,12 @@ const RegisterForm = () => {
                 firstName: values.firstName.toUpperCase(),
                 lastName: values.lastName.toUpperCase(),
                 nickname: values.nickname.toUpperCase(),
-                password: values.password.toUpperCase()
             });
             message.success('Los datos se guardaron correctamente :)');
 
 
         } catch (error) {
             // Handle Errors here.
-            let errorCode = error.code;
             let errorMessage = error.message;
 
             message.error(errorMessage);

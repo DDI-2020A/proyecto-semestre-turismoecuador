@@ -14,25 +14,35 @@ const {Header, Content,} = Layout;
 const App = () => {
     const [loged, setLoged] = useState(false);
     const [currentUser, setCurrentUser] = useState('');
+    let [userName, setUserName] = useState('User');
+    let [dataSource, setDataSource] = useState([]);
     let [navLinks, setNavLinks] = useState([]);
     const history = useHistory();
 
     const navLinksInit = [
         {
+            id: 'nav-home',
             text: 'Inicio',
-            path: Routes.HOME,
+            ico: 'fas fa-home',
+            path: Routes.HOME
         },
         {
+            id: 'nav-game',
             text: 'Juega',
-            path: Routes.GAME,
+            ico: 'fas fa-gamepad',
+            path: Routes.GAME
         },
         {
+            id: 'nav-forum',
             text: 'Conoce',
-            path: Routes.FORUM,
+            ico: 'fab fa-earlybirds',
+            path: Routes.FORUM
         },
         {
+            id: 'nav-about',
             text: 'Nosotros',
-            path: Routes.ABOUT,
+            ico: 'fas fa-users',
+            path: Routes.ABOUT
         },
     ]
 
@@ -40,24 +50,16 @@ const App = () => {
         FIREBASE.auth.onAuthStateChanged(function (user) {
             if (user) {
                 // User is signed in.
-                let displayName = user.displayName;
-                let email = user.email;
-                let emailVerified = user.emailVerified;
-                let photoURL = user.photoURL;
-                let isAnonymous = user.isAnonymous;
                 let uid = user.uid;
-                let providerData = user.providerData;
-                // ...
                 // console.log('uid', uid);
                 setCurrentUser(uid);
-
                 history.push(Routes.HOME);
                 setLoged(true)
             } else {
                 // User is signed out.
                 console.log('user loggedOut');
                 history.replace(Routes.LOGIN);
-                setLoged(false)
+                setLoged(false);
             }
         });
 
@@ -67,42 +69,28 @@ const App = () => {
     });
 
     useEffect(() => {
-        let navLinksUser = [];
-        console.log('Logeado', loged);
+        console.log('Logeado: ', loged);
         const getUser = async () => {
             FIREBASE.db.ref(`users/${currentUser}`).on('value', (snapshot) => {
-                console.log('datos', snapshot.val().firstName);
-                // console.log('currentUser:', currentUser);
-                // console.log('dataUser', userData);
+                const userData = [];
+                const user = snapshot.val();
+                const userId = snapshot.key;
+                userData.push({
+                    key: userId,
+                    email: user.email,
+                    firstName: user.firstName,
+                    lastName: user.lastName,
+                    nickName: user.nickname
+                });
+                dataSource = [
+                    ...userData
+                ]
+                const name = (dataSource[0].firstName + " " + dataSource[0].lastName);
 
-                loged === true
-                    ? navLinksUser = [
-                        ...navLinksInit,
-                        {
-                            text: snapshot.val().firstName,
-                            path: Routes.HOME,
-                            icon: ''
-                        },
-                        {
-                            text: 'Salir',
-                            path: Routes.HOME,
-                            icon: 'ion-ios-home'
-                        }
-                    ]
-                    : navLinksUser = [
-                        ...navLinksInit,
-                        {
-                            text: 'Iniciar Sesión',
-                            path: Routes.LOGIN,
-                            icon: 'ion-ios-home'
-                        },
-                        {
-                            text: 'Registrarse',
-                            path: Routes.REGISTER,
-                            icon: 'ion-ios-home'
-                        }
-                    ]
-                setNavLinks(navLinksUser);
+                console.log('userData:', user);
+                console.log('dataName:', name);
+                setUserName(name);
+
             });
         };
         getUser();
@@ -111,6 +99,38 @@ const App = () => {
             FIREBASE.db.ref('users').off();
         };
     }, [loged]);
+
+    useEffect(() => {
+        let navLinksUser = [];
+        loged === true
+            ? navLinksUser = [
+                ...navLinksInit,
+                {
+                    id: 'nav-user',
+                    text: userName,
+                    path: Routes.HOME,
+                    icon: ''
+                }
+            ]
+            : navLinksUser = [
+                ...navLinksInit,
+                {
+                    id: 'nav-login',
+                    text: 'Iniciar Sesión',
+                    icon: 'i',
+                    path: Routes.LOGIN
+                },
+                {
+                    id: 'nav-register',
+                    text: 'Registrarse',
+                    icon: '',
+                    path: Routes.REGISTER
+                }
+            ]
+        setNavLinks(navLinksUser);
+
+    }, [loged]);
+
 
     return (
 
