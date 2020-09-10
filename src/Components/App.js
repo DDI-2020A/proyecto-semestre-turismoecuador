@@ -109,7 +109,7 @@ const App = () => {
                     id: 'nav-user',
                     text: userName,
                     path: Routes.HOME,
-                    icon: ''
+                    icon: 'far fa-grin-beam',
                 }
             ]
             : navLinksUser = [

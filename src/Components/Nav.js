@@ -42,6 +42,7 @@ const Nav = ({hoverBackground, linkColor, navLinks, logo}) => {
                             setHoverIndex(-1)
                         }}
                         style={{background: hoverIndex === index ? (hoverBackground || '#fff') : ''}}
+                        icon={link.ico}
                         title={link.text}
                     >
                         <Menu.Item>
@@ -50,8 +51,7 @@ const Nav = ({hoverBackground, linkColor, navLinks, logo}) => {
                                 onClick={() => FIREBASE.auth.signOut()}
                                 style={{color: linkColor}}
                             >
-                                <i className="fas fa-sign-out-alt"></i>
-                                 Salir
+                                <i className="fas fa-sign-out-alt"></i> Salir
                             </Link>
                         </Menu.Item>
                     </SubMenu>
@@ -69,8 +69,11 @@ const Nav = ({hoverBackground, linkColor, navLinks, logo}) => {
                             to={link.path}
                             style={{color: linkColor}}
                         >
-                            <i className={link.ico}></i>
-                             {link.text}
+                            <i
+                                style={{margin:'0px 10px'}}
+                                className={link.ico}
+                            ></i>
+                            {link.text}
                         </Link>
                     </Menu.Item>
             )}
