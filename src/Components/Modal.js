@@ -2,7 +2,7 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import '../Styles/Modal.css';
 import '../Styles/App.css';
-import { Button, Row } from "antd";
+import { Button, Row,Col } from "antd";
 
 const Modal = (props) => {
     return (
@@ -15,11 +15,17 @@ const Modal = (props) => {
                     transform: props.show ? 'translateY(0vh)' : 'translateY(-100vh)',
                     opacity: props.show ? '1' : '0'
                 }}>
-                <div className="modal-header">
-                    <h3 >Sección de preguntas</h3>
-                    <div className="container-close">
-                    <span className="close-modal-btn" onClick={props.close}>X</span>
-                </div>
+                   <div className="modal-header">
+                    <Row>
+                        <Col span={22}>
+                        <h3 >Sección de preguntas</h3>    
+                        </Col >
+                        <Col span={2}>
+                        
+                        <span className="close-modal-btn" onClick={props.close}><div className="container-close">X</div></span>
+                        
+                        </Col>
+                    </Row>                 
                 </div>
                 <div className="modal-body">
                     <div>
