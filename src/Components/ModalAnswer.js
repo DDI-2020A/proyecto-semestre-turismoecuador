@@ -1,7 +1,7 @@
 import React from 'react';
 import 'antd/dist/antd.css';
 import 'antd/lib/style/themes/default.less';
-import '../Styles/Answer.css';
+import '../Styles/Answer.scss';
 import Modal from '../Components/Answer';
 import { Button, Row ,Col} from "antd";
 import "../Styles/styles.css";
