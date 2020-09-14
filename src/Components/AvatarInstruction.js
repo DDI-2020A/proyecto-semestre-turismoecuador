@@ -4,6 +4,7 @@ import 'antd/lib/style/themes/default.less';
 import '../Styles/ModalAvatar.scss';
 import Modal from '../Components/ModalAvatar';
 import { Row ,Col,Card} from "antd";
+import avatar1 from "../Images/avatar1.svg";
 
 
   class AvatarInstruction extends React.Component  {
@@ -41,7 +42,7 @@ import { Row ,Col,Card} from "antd";
                         <Card
                          hoverable
                         style={{ width: 240 }}
-                        cover={<img alt="example" src="../Images/avatar1.svg" 
+                        cover={<img alt="example" src={avatar1} 
                         className="open-modal-btn" onClick={this.openModalHandler}
                         />}
                     >                      
