@@ -8,7 +8,10 @@ import '../Styles/SelectAvatar.css'
 const SelectAvatar = ({handleOnclickContinue}) => {
 
     return (
-        <div style={{backgroundColor: '#96E2D9'}}>
+        <div style={{
+            backgroundColor: '#96E2D9',
+            height: '500px'
+        }}>
             <Row>
                 <h2 style={{color: '#011627', margin: '30px 10px'}}>
                     Elige un acompañante:
@@ -17,28 +20,30 @@ const SelectAvatar = ({handleOnclickContinue}) => {
             <Row
                 style={{
                     textAlign: 'center',
-                    padding: '10em 0px'
+                    height: '30%'
                 }}
             >
                 <Col xs={12} md={8}>
-                    <Image
+                    <img
                         src={avatar1}
                         className={'avatar'}
                     />
                 </Col>
                 <Col xs={12} md={8}>
-                    <Image
+                    <img
                         src={avatar2}
+                        className={'avatar'}
                     />
                 </Col>
                 <Col xs={24} md={8}>
-                    <Image
+                    <img
                         src={avatar3}
+                        className={'avatar'}
                     />
                 </Col>
             </Row>
             <Row>
-                <Col span={24} style={{textAlign: 'center'}}>
+                <Col span={24} style={{textAlign: 'center', marginTop:'60px'}}>
                     <Button
                         className={'btn-continue'}
                         style={{margin: '0px 0px 2em'}}

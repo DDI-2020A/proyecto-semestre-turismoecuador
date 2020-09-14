@@ -11,6 +11,7 @@ import SelectAvatar from "../Components/SelectAvatar";
 
 function Game() {
     const [selectAvatar, setSelectAvatar] = useState(false);
+    let avatar = null;
 
     useEffect(() => {
         console.log('Avatar seleccionado', selectAvatar)

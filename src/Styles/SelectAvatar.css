@@ -1,0 +1,10 @@
+.avatar{
+    width: 100px;
+}
+.avatar:hover{
+    width: 125px;
+}
+
+.avatar:active{
+    width: 125px;
+}
