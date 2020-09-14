@@ -1,5 +1,5 @@
 import React from "react";
-import {Col, Row, Image, Button} from 'antd';
+import {Col, Row, Button} from 'antd';
 import avatar1 from '../Images/avatar1.svg';
 import avatar2 from '../Images/avatar2.svg';
 import avatar3 from '../Images/avatar3.svg';
@@ -25,18 +25,21 @@ const SelectAvatar = ({handleOnclickContinue}) => {
             >
                 <Col xs={12} md={8}>
                     <img
+                        alt = "avatar1"
                         src={avatar1}
                         className={'avatar'}
                     />
                 </Col>
                 <Col xs={12} md={8}>
                     <img
+                        alt = "avatar2"
                         src={avatar2}
                         className={'avatar'}
                     />
                 </Col>
                 <Col xs={24} md={8}>
                     <img
+                        alt = "avatar3"
                         src={avatar3}
                         className={'avatar'}
                     />
