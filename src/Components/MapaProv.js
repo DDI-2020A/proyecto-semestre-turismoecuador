@@ -1,10 +1,8 @@
 import * as React from 'react';
 import 'antd/dist/antd.css';
-import '../Styles/Mapa.scss'
+import '../Styles/MapaProv.scss'
 import {Row, Col,Tooltip} from 'antd'
-
-
-const Mapa =()=> {
+const MapaProv =()=> {
     return (
        <>
        <Row lg={22} className="map-route" >
@@ -186,4 +184,4 @@ const Mapa =()=> {
 
     );
 }
-export default Mapa;
+export default MapaProv;

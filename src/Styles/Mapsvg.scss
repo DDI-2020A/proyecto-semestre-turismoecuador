@@ -1,0 +1,133 @@
+
+.container-mapag{
+    margin:0 auto;
+    height: 500px;
+   position: relative;
+   transform: translateY(25%); 
+   
+  
+}
+.map-galapagos{
+    display:flex;
+    align-items: center;
+    justify-content: center;       
+}
+.main-mapa{
+    padding: 50px;
+}
+
+.map-ecuador{
+    display:flex;
+   padding:50px;
+    padding-top: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+.map-galapagos path{ 
+    stroke:white;
+    stroke:#011627;
+    stroke-width:2px;
+    transition:fill 0.3s;
+}
+.map-ecuador path{
+    stroke:#011627;
+    stroke-width:2px;
+    transition:fill 0.3s;
+}
+
+.map-route{
+    background:#FCE1D6;
+     justify-content: center; 
+     border:5px solid black;
+}
+
+.map-galapagos path:hover{
+    fill:yellow !important; 
+    stroke-linejoin: bevel;
+    transform-style: preserve-3d;
+}
+.map-ecuador path:hover{
+    fill:yellow !important;
+    stroke-linejoin: bevel;
+    stroke-width: 3px;
+    transform-style: preserve-3d;
+}
+.line-route-insular{
+    fill:rgb(173, 51, 197);
+    stroke:rgb(0, 153, 255);
+}
+.line-route-insular path {
+    stroke:rgb(173, 51, 197) !important;
+      fill:blue;   
+} 
+.line-route-insular path:hover{
+    stroke:rgb(0, 153, 255) !important;
+    fill:rgb(0, 153, 255);
+    stroke-width: 4px;    
+}
+
+
+.line-route-sierra{
+    fill:rgb(173, 51, 197);
+    stroke:rgb(0, 153, 255);
+}
+.line-route-sierra path {
+    stroke:rgb(0, 153, 255)!important;    
+}
+.line-route-sierra path:hover{
+    stroke:rgb(0, 153, 255) !important;
+    fill:rgb(0, 153, 255);
+    stroke-width: 4px;    
+}
+
+.line-route-coast{
+    fill:rgb(173, 51, 197);
+    stroke:rgb(0, 153, 255);
+}
+.line-route-coast path {
+    stroke:rgb(0, 153, 255)!important;    
+}
+.line-route-coast path:hover{
+    stroke:rgb(0, 153, 255) !important;
+    fill:rgb(0, 153, 255);
+    stroke-width: 4px;    
+}
+
+.line-route-amazonia{
+    fill:rgb(173, 51, 197);
+    stroke:rgb(0, 153, 255);
+}
+.line-route-amazonia path {
+    stroke:rgb(0, 153, 255) !important;    
+}
+.line-route-amazonia path:hover{
+    stroke:rgb(0, 153, 255) !important;
+    fill:rgb(0, 153, 255);
+    stroke-width: 4px;    
+}
+
+.avatar-msn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+
+}
+
+
+#ECU1{   
+    fill:#F8AF93;;
+}
+
+#ECU8{
+    fill:#F7B150;
+}
+
+#ECU4{
+    fill:#42D793;
+}
+
+#ECU24{
+    fill:#42D793;
+}
