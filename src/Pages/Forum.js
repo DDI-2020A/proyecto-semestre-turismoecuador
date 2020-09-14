@@ -1,5 +1,6 @@
 import React from "react";
 import '../Styles/Forum.css';
+import '../Styles/Carousel.scss';
 import { Carousel, Row, Col } from 'antd';
 import image1 from '../Images/img1.jpg';
 import image2 from '../Images/img2.jpg';
@@ -12,13 +13,13 @@ const Forum = () => {
         <>
                 <Carousel autoplay>
                     <div>
-                        <img className="contentStyle" src={ image1 }/>
+                        <img className="contentStyle" src={ image3 }/>
                     </div>
                     <div>
                         <img className="contentStyle" src={ image2 }/>
                     </div>
                     <div>
-                        <img className="contentStyle" src={ image3 }/>
+                        <img className="contentStyle" src={ image1 }/>
                     </div>
                     <div>
                         <img className="contentStyle" src={ image4 }/>

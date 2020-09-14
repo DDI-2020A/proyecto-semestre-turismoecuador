@@ -29,12 +29,8 @@ function Carousel(){
         console.log(x);
          x === -100*(carouselArray.length-1) ? setX(0): setX(x-100);
     };
-    
 
     return(
-
-
-
            <Row> 
                <Col>
                <Row>

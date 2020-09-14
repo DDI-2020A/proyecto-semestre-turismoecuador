@@ -1,6 +1,6 @@
 .contentStyle {
     width: 100%;
-    max-height: 500px;
+    max-height: 625px;
     color: #FDFFFC;
     lineHeight: 160px;
     textAlign: center;
@@ -8,4 +8,6 @@
 }
 .information{
     color: #7f8b92;
+    font-family: roboto;
 }
+
