@@ -31,7 +31,10 @@ import "../Styles/styles.css";
 
     render () {
         return (
+
            <Row>
+              
+
             <Col span={24}>
             <div className="modal-questions">
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
@@ -64,6 +67,8 @@ import "../Styles/styles.css";
                 </Row>
             </div>
             </Col>
+
+           
            </Row>
             
             

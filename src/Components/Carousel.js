@@ -1,7 +1,6 @@
 import React,{ useState } from 'react';
  import '../Styles/Carousel.scss';
 import ImgComponent from "../Components/ImgComponent";
-import {Col,Row,Div} from 'antd'
 import img1 from "../Images/img1.jpg";
 import img2 from "../Images/img2.jpg";
 import img3 from "../Images/img3.jpg";
@@ -31,30 +30,24 @@ function Carousel(){
     };
 
     return(
-           <Row> 
-               <Col>
-               <Row>
-                   <Col>
-                   <div className=" ant-col-lg-24 ant-col-xs-24">
-                   <div className="carousel" >
-                   {carouselArray.map((item,index)=>{
-                    return(
-                   <    div key ={index} className="slide" style={{transform:`translateX(${x}%)`}}>
-                        {item}
-                        </div>   
-                    );
-                })}
-                <button id ="goLeft" onClick={goLeft}><i class="fas fa-chevron-left"></i></button>
-                <button id ="goRight"onClick={goRight}><i class="fas fa-chevron-right"></i></button>
-        
-        </div>
-                   </div>
-                   </Col>
-               </Row>
-               </Col>
 
-        </Row>
-        
+
+
+        <div className="carousel">
+           
+
+            {carouselArray.map((item,index)=>{
+                return(
+                   <div key ={index} className="slide" style={{transform:`translateX(${x}%)`}}>
+
+                        {item}
+                        
+                    </div>  
+                );
+            })}
+            <button id ="goLeft" onClick={goLeft}><i className="fas fa-chevron-left"></i></button>
+            <button id ="goRight"onClick={goRight}><i className="fas fa-chevron-right"></i></button>
+        </div>
     )
 
 }

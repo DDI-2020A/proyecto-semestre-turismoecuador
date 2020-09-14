@@ -6,7 +6,6 @@ import image1 from '../Images/img1.jpg';
 import image2 from '../Images/img2.jpg';
 import image3 from '../Images/img3.jpg';
 import image4 from '../Images/img4.jpg';
-import Mapa from "../Components/Mapa";
 
 const Forum = () => {
     return (
@@ -47,7 +46,7 @@ const Forum = () => {
                     <Col xs={2} sm={2} md={2} lg={2} xl={2}/>
                 </Row>,
             </div>
-            <Mapa/>
+            
         </>
     );
 };
