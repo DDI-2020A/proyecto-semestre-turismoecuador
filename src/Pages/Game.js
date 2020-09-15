@@ -9,7 +9,7 @@ import SelectAvatar from "../Components/SelectAvatar";
 //import ModalQuestions from '../Components/ModalQuestions';
 
 
-function Game() {
+const Game = () => {
     const [selectAvatar, setSelectAvatar] = useState(false);
     let avatar = null;
 
@@ -25,8 +25,8 @@ function Game() {
         <>
             {
                 selectAvatar === false
-                ?<SelectAvatar handleOnclickContinue={handleOnclickContinue}/>
-                :<Mapsvg/>
+                    ? <SelectAvatar handleOnclickContinue={handleOnclickContinue}/>
+                    : <Mapsvg/>
             }
         </>
     );

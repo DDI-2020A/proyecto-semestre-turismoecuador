@@ -1,0 +1,17 @@
+.avatar {
+  width: 100px;
+}
+
+.avatar-buttons{
+  label{
+    height: 150px;
+    margin: 0 30px;
+    background-color: rgba(0,0,0,.0);
+  }
+  &.ant-radio-button-wrapper-checked {
+          background-color: #2EC4B6;
+        }
+  .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+    background-color: #2EC4B6;
+  }
+}
