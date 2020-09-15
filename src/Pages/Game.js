@@ -6,7 +6,7 @@ import SelectAvatar from "../Components/SelectAvatar";
 //import ModalAnswer from '../Components/ModalAnswer';
 //import ModalQuestions from './ModalQuestions';
 //import Carousel from '../Components/Carousel';
-//import ModalQuestions from '../Components/ModalQuestions';
+import ModalQuestions from '../Components/ModalQuestions';
 
 
 const Game = () => {
@@ -21,6 +21,19 @@ const Game = () => {
         setSelectAvatar(true);
     };
 
+    const [selectQuestion, setSelectQuestion] = useState(false);
+  
+
+    useEffect(() => {
+        console.log('Region Seleccionada', selectQuestion)
+    }, [selectQuestion]);
+  
+    const handleOnclickQuestion = () => {
+        setSelectQuestion(true);
+    };
+    
+
+
     return (
         <>
             {
@@ -28,6 +41,7 @@ const Game = () => {
                     ? <SelectAvatar handleOnclickContinue={handleOnclickContinue}/>
                     : <Mapsvg/>
             }
+                
         </>
     );
 }

@@ -47,67 +47,9 @@
     font-size: 30px;
     margin: 0;
 }
-.close-modal-btn:hover {
-    color:#011627;
-}
-.btn-cancel, .btn-continue {
-    background:#FF9F1C ;
-    border:2px solid white;
-    color: white;
-    opacity: 1 !important;
-    cursor: pointer;
-    font-weight: bold;
-    outline: none;
-    padding-bottom: 10px ;
-    text-align: center; 
-}
 
-.btn-cancel {
-    background-color:#011627;
-    float: left;
-}
-.btn-cancel:hover{
-    background-color:#E71D36;
-    color: white;
-    border-color: #E71D36;
-}
-
-.btn-continue:hover{
-    background-color:#E71D36;
-    color: white;
-    border-color: #E71D36;   
-}
-.main-provincia{
-    height: 500px;
-    padding: 20px; 
-    border-radius: 5px;
-    border:5px solid white;
-}
-
-.color-btn-answer{
-    background-color:#E71D36;
-    color: white;
-    border-color: white;
-    border-radius: 3px;  
-}
-.color-btn-answer:hover{
-    background-color:#E71D36;
-    color: #96E2D9;
-    border-color: #96E2D9;
-}
-.container-close:hover{
-    background-color:#E71D36;
-    color: white;
-    border-color: white;
-}
-
-
-.modal-questions{
-
-     padding:20px;
-}
 .container-answer{
-
+    background:white;
     opacity: 0.7;
     letter-spacing: 1px;
     font-size: 15px;

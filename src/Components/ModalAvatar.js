@@ -2,9 +2,9 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import '../Styles/ModalAvatar.scss';
 import '../Styles/App.css';
-import { Button, Row ,Col} from "antd";
+import {  Row ,Col} from "antd";
 
-const Answer = (props) => {
+const ModalAvatar = (props) => {
     return (
         <div>
             <div className="moda-wrapper "
@@ -31,7 +31,6 @@ const Answer = (props) => {
                 </div>
                 <div className="modal-footer">
                     <Row className="opacity-modal">
-                    <Button className="btn-continue">CONTINUAR</Button>
                     </Row>
                 </div>
             </div>
@@ -39,5 +38,5 @@ const Answer = (props) => {
     )
 }
 
-export default Answer;
+export default ModalAvatar;
 

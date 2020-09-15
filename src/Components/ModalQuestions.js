@@ -42,7 +42,7 @@ import "../Styles/styles.css";
                       <Col span={23}>
                   <div className="main-provincia fondo-imagen4">
                     <Row>
-                    <Button className="open-modal-btn" onClick={this.openModalHandler}>Provincia</Button>
+                    <Button id="star-play" className="open-modal-btn" onClick={this.openModalHandler}>JUGAR</Button>
                      </Row>
                 <Modal
                     className="modal"

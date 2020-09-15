@@ -88,6 +88,8 @@
     padding: 20px; 
     border-radius: 5px;
     border:5px solid white;
+    margin: 0 auto ;
+    
 }
 
 .color-btn-answer{
@@ -104,6 +106,7 @@
 .modal-questions{
      background-color: #96E2D9;
      padding:20px;
+    
 }
 
 .container-close{
@@ -117,4 +120,19 @@
     border: 1px solid white;
     padding-bottom: 10px;
     
+}
+
+#star-play{
+    position: absolute;
+    transform: translateX(50%);
+    
+    top: 50%;
+    width:50%;
+    height: 20%;
+    font-size: 50px;
+    background-color:#E71D36;
+    color: white;
+    border:5px solid;
+    border-color: white;
+
 }

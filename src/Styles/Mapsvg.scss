@@ -3,8 +3,7 @@
     margin:0 auto;
     height: 500px;
    position: relative;
-   transform: translateY(25%); 
-   
+   transform: translateY(25%);   
   
 }
 .map-galapagos{
@@ -13,8 +12,10 @@
     justify-content: center;       
 }
 .main-mapa{
-    
+    padding: 50px;
+
 }
+
 
 .map-ecuador{
     display:flex;
@@ -39,7 +40,7 @@
 .map-route{
     background:#FCE1D6;
      justify-content: center; 
-     border:2px solid black;
+     border:5px solid black;
 }
 
 .map-galapagos path:hover{
@@ -64,6 +65,11 @@
 .line-route-insular path:hover{
     stroke:rgb(0, 153, 255) !important;
     fill:rgb(0, 153, 255);
+    stroke-width: 4px;    
+}
+.line-route-insular path:active{
+    stroke:yellow !important;
+    fill:yellow;
     stroke-width: 4px;    
 }
 
@@ -106,13 +112,18 @@
     fill:rgb(0, 153, 255);
     stroke-width: 4px;    
 }
+.line-route-amazonia path:active{
+    stroke:yellow !important;
+    fill:yellow;
+    stroke-width: 4px;    
+}
+
 
 .avatar-msn{
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-
 }
 
 

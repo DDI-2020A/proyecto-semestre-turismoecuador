@@ -1,6 +1,6 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import '../Styles/Answer.scss';
+import '../Styles/Answer.css';
 import '../Styles/App.css';
 import { Button, Row ,Col} from "antd";
 
@@ -40,4 +40,5 @@ const Answer = (props) => {
 }
 
 export default Answer;
+
 
