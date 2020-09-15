@@ -9,12 +9,8 @@ import SelectAvatar from "../Components/SelectAvatar";
 //import ModalQuestions from '../Components/ModalQuestions';
 
 
-<<<<<<< HEAD
 const Game = () => {
-=======
-function Game() {
 
->>>>>>> f0d20fead18b3553e593c79bb5f80846c0f5bcf6
     const [selectAvatar, setSelectAvatar] = useState(false);
 
     useEffect(() => {
