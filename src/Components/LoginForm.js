@@ -9,13 +9,6 @@ import FIREBASE from "../Firebase";
 
 const LoginForm = () => {
 
-    const onFinish = values => {
-        console.log('Success:', values);
-    };
-
-    const onFinishFailed = errorInfo => {
-        console.log('Failed:', errorInfo);
-    };
     const handleLogin = async ({email, password}) => {
         try {
             await FIREBASE.auth.signInWithEmailAndPassword(email, password);
@@ -27,6 +20,7 @@ const LoginForm = () => {
             let errorMessage = error.message;
 
             message.error(errorMessage);
+            message.error(errorCode);
         }
     };
 

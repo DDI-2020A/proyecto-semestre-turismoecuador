@@ -6,7 +6,6 @@ import Modal from '../Components/ModalAvatar';
 import {Row, Col, Card} from "antd";
 import avatar1 from "../Images/avatar1.svg";
 
-
 class AvatarInstruction extends React.Component {
 
     constructor() {
@@ -38,7 +37,6 @@ class AvatarInstruction extends React.Component {
                             <div onClick={this.closeModalHandler} className="back-drop"></div> : null}
                         <Row>
                             <Col xs={8}>
-
                                 <Card
                                     hoverable
                                     style={{width: 240}}
@@ -70,8 +68,6 @@ class AvatarInstruction extends React.Component {
                     </div>
                 </Col>
             </Row>
-
-
         );
     }
 }

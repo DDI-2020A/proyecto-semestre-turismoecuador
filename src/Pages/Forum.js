@@ -1,52 +1,77 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import '../Styles/Forum.css';
 import '../Styles/Carousel.scss';
 import { Carousel, Row, Col } from 'antd';
-import image1 from '../Images/img1.jpg';
-import image2 from '../Images/img2.jpg';
-import image3 from '../Images/img3.jpg';
-import image4 from '../Images/img4.jpg';
+import FIREBASE from '../Firebase';
 
 const Forum = () => {
+
+    const [ dataSource, setDataSource ] = useState( );
+    const [ isLoading, setIsLoading ] = useState( true );
+
+    useEffect( () => {
+        const getProvince = async() => {
+          FIREBASE.db.ref( 'regiones' ).on( 'value', ( snapshot ) => {
+            const dataSource = [];
+            snapshot.forEach( ( data ) => {
+              const region = data.val();
+              const regionId = data.key;
+              dataSource.push( {
+                key: regionId,
+                color: region.color,
+                provinces: region.provinces
+              } );
+            } );
+            setDataSource(dataSource);
+            console.log('dataSource', dataSource)
+            setIsLoading( false );
+          } );
+        };
+        getProvince();
+      }, [] );
+
     return (
         <>
-                <Carousel autoplay>
-                    <div>
-                        <img className="contentStyle" src={ image3 }/>
-                    </div>
-                    <div>
-                        <img className="contentStyle" src={ image2 }/>
-                    </div>
-                    <div>
-                        <img className="contentStyle" src={ image1 }/>
-                    </div>
-                    <div>
-                        <img className="contentStyle" src={ image4 }/>
-                    </div>
-                </Carousel>
-            <div className="information">
-                <Row>
-                    <Col xs={2} sm={2} md={2} lg={2} xl={2}/>
-                    <Col xs={20} sm={20} md={20} lg={20} xl={20}>
-                        <br/>
-                        <strong>Nombre Oficial:</strong> República de Ecuador<br/>
-                        <br/>
-                        <strong>Extensión:</strong> 256.370 KM2<br/>
-                        <br/>
-                        <strong>Capital:</strong> Quito<br/>
-                        <br/>
-                        <strong>Forma de Gobierno:</strong> República<br/>
-                        <br/>
-                        <strong>Presidente:</strong> Lenin Moreno<br/>
-                        <br/>
-                        <strong>Idioma Oficial:</strong> ”El castellano es el idioma oficial del Ecuador; el castellano, el kichwa y el shuar son idiomas oficiales de relación intercultural.
-                        Los demás idiomas ancestrales son de uso oficial para los pueblos indígenas en las zonas donde habitan y en los términos que fija la ley.
-                        El Estado respetará y estimulará su conservación y uso”<br/>
-                    </Col>
-                    <Col xs={2} sm={2} md={2} lg={2} xl={2}/>
-                </Row>,
-            </div>
-            
+            {
+                dataSource
+                ? 
+                dataSource.map((region, index) => (
+                region.key === 'costa' ?
+                <>
+                    <Carousel autoplay >
+                        <div>
+                            <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.images.image1.photoPlace }/>
+                        </div>
+                        <div>
+                            <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.images.image2.photoPlace }/>
+                        </div>
+                        <div>
+                            <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.images.image3.photoPlace }/>
+                        </div>
+                        <div>
+                            <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.images.image4.photoPlace }/>
+                        </div>
+                    </Carousel>
+                        <Row>
+                            <Col xs={2} sm={2} md={2} lg={2} xl={2}/>
+                            <Col xs={20} sm={20} md={20} lg={20} xl={20}>
+                                <br/>
+                                <strong key = {index = 5} >Región:</strong> {region.key} <br/>
+                                <br/>
+                                <strong key = {index = 6} >Provincia:</strong> { region.provinces.nameProvinces } <br/>
+                                <br/>                                
+                                <strong key = {index = 7} >Capital:</strong> { region.provinces.capital } <br/>
+                                <br/>
+                                <strong key = {index = 8} >Actividades:</strong> { region.provinces.activities } <br/>
+                                <br/>
+                                <strong key = {index = 9} >Comida típica:</strong> {region.provinces.food} <br/>
+                                <br/>
+                            </Col>
+                            <Col xs={2} sm={2} md={2} lg={2} xl={2}/>
+                        </Row>,                
+                </>
+                : ''
+            )) : '...cargando'}
         </>
     );
 };
