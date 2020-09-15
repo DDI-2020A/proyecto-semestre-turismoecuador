@@ -2,6 +2,8 @@ import React from 'react';
 import '../Styles/App.css';
 import {Card, Button, Image} from 'antd';
 import {Col, Carousel} from 'antd';
+import Routes from "../Constants/routes";
+import {Link} from "react-router-dom";
 
 function CardInformation() {
 
@@ -16,19 +18,23 @@ function CardInformation() {
                 <Col className="gutter-row image" xs={24} md={12}>
                     <Image
                         src={"https://griscv.files.wordpress.com/2016/06/1b59a-mascotasconsultaprelegislativa2013.jpg"}
-                        style={{maxWidth:'500px'}}
+                        style={{maxWidth: '500px'}}
                     />
                 </Col>
                 <Col className="gutter-row description" xs={24} md={12}>
                     <Meta title="JUEGA!"
                           description="¿Qué tanto conoces Ecuador? ¿Eres de capaz de contestar preguntas sobre zonas turísticas del país? Diviérte y conoce toda lo maravilloso que ofrece ECUADOR!"/>
-                    <Button type="primary" className="button-conoce-juega"> IR A JUGAR </Button>
+                    <Button type="primary" className="button-conoce-juega">
+                        <Link to={Routes.GAME}> IR A JUGAR</Link>
+                    </Button>
                 </Col>
 
                 <Col className="gutter-row description" xs={24} md={12}>
                     <Meta title="CONOCE!"
                           description="Ecuador posee una gran cantidad de riqueza natural y cultural; debido a las cuatro regiones que posee podemos encontrar en cada región e incluso provincia miles de especies y lugares diferentes que merecen ser visitados; en el foro podrás ver algunos de los maravillosos lugares que ofrece Ecuador."/>
-                    <Button type="primary" className="button-conoce-juega"> CONOCER </Button>
+                    <Button type="primary" className="button-conoce-juega">
+                        <Link to={Routes.FORUM}> CONOCER</Link>
+                    </Button>
                 </Col>
                 <Col className="gutter-row" xs={24} md={12}>
                     <Carousel autoplay className="tama-carousel">
