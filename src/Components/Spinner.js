@@ -1,22 +1,29 @@
 import React from "react";
 import '../Styles/Spinner.scss';
+import {Modal, Button} from 'antd';
 
-const Spinner = () => {
+class Spinner extends React.Component {
+    state = {visible: true};
 
-    return (
-        <>
-            <div className='container'>
-                <div className='spinner-container'>
-                    <div className="spinner-path">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+    render() {
+        return (
+            <Modal
+                title="Verificando"
+                visible={true}
+            >
+                <div className='container'>
+                    <div className='spinner-container'>
+                        <div className="spinner-path">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </>
-    );
-};
+            </Modal>
+        );
+    }
+}
 
 export default Spinner;

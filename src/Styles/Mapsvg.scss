@@ -1,7 +1,7 @@
 
 .container-mapag{
     margin:0 auto;
-
+    height: 500px;
    position: relative;
    transform: translateY(25%);   
   
@@ -44,12 +44,12 @@
 }
 
 .map-galapagos path:hover{
-    fill:#F7E400!important; 
+    fill:yellow !important; 
     stroke-linejoin: bevel;
     transform-style: preserve-3d;
 }
 .map-ecuador path:hover{
-    fill:#F7E400  !important;
+    fill:yellow !important;
     stroke-linejoin: bevel;
     stroke-width: 3px;
     transform-style: preserve-3d;
@@ -60,13 +60,17 @@
 }
 .line-route-insular path {
     stroke:rgb(173, 51, 197) !important;
-      fill:rgb(0, 153, 255);   
+      fill:blue;   
 } 
-
 .line-route-insular path:hover{
+    stroke:rgb(0, 153, 255) !important;
+    fill:rgb(0, 153, 255);
+    stroke-width: 4px;    
+}
+.line-route-insular path:active{
     stroke:yellow !important;
     fill:yellow;
-    stroke-width: 3px;    
+    stroke-width: 4px;    
 }
 
 
@@ -75,46 +79,40 @@
     stroke:rgb(0, 153, 255);
 }
 .line-route-sierra path {
-    stroke:rgb(173, 51, 197) !important;
-    fill:rgb(0, 153, 255);    
-    stroke-width: 4px;    
-
+    stroke:rgb(0, 153, 255)!important;    
 }
 .line-route-sierra path:hover{
-    stroke:yellow !important;
-    fill:yellow;
-    stroke-width: 3px;    
+    stroke:rgb(0, 153, 255) !important;
+    fill:rgb(0, 153, 255);
+    stroke-width: 4px;    
 }
-
 
 .line-route-coast{
     fill:rgb(173, 51, 197);
     stroke:rgb(0, 153, 255);
 }
 .line-route-coast path {
-    stroke:rgb(173, 51, 197) !important;
-    fill:rgb(0, 153, 255);    
-    stroke-width: 4px;
+    stroke:rgb(0, 153, 255)!important;    
 }
 .line-route-coast path:hover{
-    stroke:yellow !important;
-    fill:yellow;
-    stroke-width: 3px;    
+    stroke:rgb(0, 153, 255) !important;
+    fill:rgb(0, 153, 255);
+    stroke-width: 4px;    
 }
-
-
 
 .line-route-amazonia{
     fill:rgb(173, 51, 197);
     stroke:rgb(0, 153, 255);
 }
 .line-route-amazonia path {
-    stroke:rgb(173, 51, 197) !important;
-    fill:rgb(0, 153, 255);    
-    stroke-width: 4px;
+    stroke:rgb(0, 153, 255) !important;    
 }
-
 .line-route-amazonia path:hover{
+    stroke:rgb(0, 153, 255) !important;
+    fill:rgb(0, 153, 255);
+    stroke-width: 4px;    
+}
+.line-route-amazonia path:active{
     stroke:yellow !important;
     fill:yellow;
     stroke-width: 4px;    

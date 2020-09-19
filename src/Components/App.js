@@ -126,27 +126,22 @@ const App = () => {
 
     }, [loged]);
 
-
     return (
         <>
-            {
-                isLoading == false
-                    ? <Spinner/>
-                    : <Layout className="layout">
-                        <Header>
-                            <Nav
-                                navLinks={navLinks}
-                                logo={logo}
-                                hoverBackground="#96E2D9"
-                                linkColor="#FDFFFC"
-                            />
-                        </Header>
-                        <Content>
-                            <AppRouter/>
-                        </Content>
-                        <Footer/>
-                    </Layout>
-            }
+            <Layout className="layout">
+                <Header>
+                    <Nav
+                        navLinks={navLinks}
+                        logo={logo}
+                        hoverBackground="#96E2D9"
+                        linkColor="#FDFFFC"
+                    />
+                </Header>
+                <Content>
+                    <AppRouter/>
+                </Content>
+                <Footer/>
+            </Layout>
         </>
     );
 }

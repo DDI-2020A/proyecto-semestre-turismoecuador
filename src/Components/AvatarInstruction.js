@@ -1,69 +1,82 @@
-import React from 'react';
+import React, {useState} from 'react';
 import 'antd/dist/antd.css';
 import 'antd/lib/style/themes/default.less';
 import '../Styles/ModalAvatar.scss';
 import Modal from '../Components/ModalAvatar';
-import { Row ,Col} from "antd";
-import avatar3 from "../Images/avatar3.svg" ;
+import {Row, Col} from "antd";
+import avatar0 from "../Images/avatar0.svg" ;
+import avatar1 from "../Images/avatar1.svg" ;
+import avatar2 from "../Images/avatar2.svg" ;
+
+const avatars = [
+    {
+        key: '0',
+        src: avatar0
+    },
+    {
+        key: '1',
+        src: avatar1
+    },
+    {
+        key: '2',
+        src: avatar2
+    }
+];
 
 
-  class AvatarInstruction extends React.Component  {
+// class AvatarInstruction extends React.Component  {
+const AvatarInstruction = ({avatarKey}) => {
 
-    constructor() {
-        super();
+    const [isShowing, setIsShowing] = useState(false);
 
-        this.state = {
-            isShowing: false
-        }
+    const openModalHandler = () => {
+        setIsShowing(true);
     }
 
-    openModalHandler = () => {
-        this.setState({
-            isShowing: true
-        });
+    const closeModalHandler = () => {
+        setIsShowing(false);
     }
 
-    closeModalHandler = () => {
-        this.setState({
-            isShowing: false
-        });
-    }
+    return (
+        <>
+            <Row>
 
-    render () {
-        return (
-           <Row>
+                <Col span={24}>
+                    <div>
+                        {
+                            isShowing === true
+                                ? <div onClick={closeModalHandler} className="back-drop"/>
+                                : null
+                        }
+                        <Row>
+                            <Col xs={8}>
+                                <img size={20} src={avatars[avatarKey].src} alt="error" className="open-modal-btn"
+                                     onClick={openModalHandler}/>
+                            </Col>
 
-            <Col span={24}>
-            <div >
-                { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
-                    <Row>
-                        <Col xs={8}>
-                        <img  size={20} src={avatar3} alt="error" className="open-modal-btn" onClick={this.openModalHandler}/>
-                        </Col>
+                            <Col xs={16}>
+                                <Modal
+                                    className="modal"
+                                    show={isShowing}
+                                    close={closeModalHandler}>
 
-                      <Col xs={16}>
-                        <Modal
-                            className="modal"
-                            show={this.state.isShowing}
-                            close={this.closeModalHandler}>
+                                    <div className="modal-answer"/>
+                                    <Row>
+                                        <Col span={24}>
+                                            <div className="container-answer">
+                                                <p>Bienvenido al juego interactivo de preguntas para conocer el
+                                                    Ecuador</p>
+                                            </div>
+                                        </Col>
+                                    </Row>
+                                </Modal>
+                            </Col>
+                        </Row>
+                    </div>
+                </Col>
+            </Row>
+        </>
+    );
 
-                            <div className="modal-answer"></div>
-                             <Row>
-                             <Col span={24}>
-                             <div className="container-answer">
-                            <p>Bienvenido al juego interactivo de preguntas para conocer el Ecuador</p>
-                            </div>  
-                             </Col>
-                            </Row>                    
-                        </Modal>          
-                    </Col>
-                </Row>
-            </div>
-            </Col>
-           </Row>
-            
-            
-        );
-    }
 }
 export default AvatarInstruction;

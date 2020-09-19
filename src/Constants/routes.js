@@ -1,6 +1,7 @@
 const publicRoutes = {
     HOME: '/',
     GAME: '/juego',
+    MAP: '/juego/mapa',
     FORUM: '/foro',
     ABOUT: '/nosotros',
     LOGIN: '/inicioSesion',

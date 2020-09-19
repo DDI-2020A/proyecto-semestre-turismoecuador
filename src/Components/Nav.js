@@ -3,10 +3,11 @@ import {Menu, Image} from 'antd';
 import {Link} from 'react-router-dom';
 import {useLocation} from 'react-router-dom';
 import FIREBASE from "../Firebase";
+import Spinner from "./Spinner";
 
 const {SubMenu} = Menu;
 
-const Nav = ({hoverBackground, linkColor, navLinks, logo}) => {
+const Nav = ({hoverBackground, linkColor, navLinks, logo, isLoading}) => {
     let location = useLocation();
     const [currentPage, setCurrentPage] = useState('home');
     const [hoverIndex, setHoverIndex] = useState(-1)
@@ -28,50 +29,51 @@ const Nav = ({hoverBackground, linkColor, navLinks, logo}) => {
             selectedKeys={[currentPage]}
             mode='horizontal'>
             <Image src={logo} height="40px" width="40px" alt="toolbar-logo"/>
-            {navLinks.map((link, index) =>
-                link.id === 'nav-user'
-                    ? <SubMenu
-                        key={index}
-                        onMouseEnter={() => {
-                            setHoverIndex(index)
-                        }}
-                        onMouseLeave={() => {
-                            setHoverIndex(-1)
-                        }}
-                        style={{background: hoverIndex === index ? (hoverBackground || '#fff') : ''}}
-                        icon={link.ico}
-                        title={link.text}
-                    >
-                        <Menu.Item>
+            {
+                navLinks.map((link, index) =>
+                    link.id === 'nav-user'
+                        ? <SubMenu
+                            key={index}
+                            onMouseEnter={() => {
+                                setHoverIndex(index)
+                            }}
+                            onMouseLeave={() => {
+                                setHoverIndex(-1)
+                            }}
+                            style={{background: hoverIndex === index ? (hoverBackground || '#fff') : ''}}
+                            icon={link.ico}
+                            title={link.text}
+                        >
+                            <Menu.Item>
+                                <Link
+                                    to={link.path}
+                                    onClick={() => FIREBASE.auth.signOut()}
+                                    style={{color: linkColor}}
+                                >
+                                    <i className="fas fa-sign-out-alt"/>
+                                    Salir
+                                </Link>
+                            </Menu.Item>
+                        </SubMenu>
+                        : <Menu.Item
+                            key={index}
+                            onMouseEnter={() => {
+                                setHoverIndex(index)
+                            }}
+                            onMouseLeave={() => {
+                                setHoverIndex(-1)
+                            }}
+                            style={{background: hoverIndex === index ? (hoverBackground || '#fff') : ''}}
+                        >
                             <Link
                                 to={link.path}
-                                onClick={() => FIREBASE.auth.signOut()}
                                 style={{color: linkColor}}
                             >
-                                <i className="fas fa-sign-out-alt"/>
-                                Salir
+                                <i style={{margin: '0px 10px'}} className={link.ico}/>
+                                {link.text}
                             </Link>
                         </Menu.Item>
-                    </SubMenu>
-                    : <Menu.Item
-                        key={index}
-                        onMouseEnter={() => {
-                            setHoverIndex(index)
-                        }}
-                        onMouseLeave={() => {
-                            setHoverIndex(-1)
-                        }}
-                        style={{background: hoverIndex === index ? (hoverBackground || '#fff') : ''}}
-                    >
-                        <Link
-                            to={link.path}
-                            style={{color: linkColor}}
-                        >
-                            <i style={{margin: '0px 10px'}} className={link.ico}/>
-                            {link.text}
-                        </Link>
-                    </Menu.Item>
-            )}
+                )}
         </Menu>
     );
 };
