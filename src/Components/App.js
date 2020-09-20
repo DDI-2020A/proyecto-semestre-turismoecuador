@@ -13,8 +13,9 @@ const {Header, Content,} = Layout;
 
 const App = () => {
     const [loged, setLoged] = useState(false);
-    const [currentUser, setCurrentUser] = useState('');
-    let [userName, setUserName] = useState('User');
+    const [currentUser, setCurrentUser] = useState(null);
+    const [userName, setUserName] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
     let [dataSource, setDataSource] = useState([]);
     let [navLinks, setNavLinks] = useState([]);
     const history = useHistory();
@@ -47,14 +48,38 @@ const App = () => {
     ]
 
     useEffect(() => {
-        FIREBASE.auth.onAuthStateChanged(function (user) {
+        FIREBASE.auth.onAuthStateChanged(async (user) => {
             if (user) {
                 // User is signed in.
                 let uid = user.uid;
                 // console.log('uid', uid);
-                setCurrentUser(uid);
+
+                await FIREBASE.db.ref(`users/${uid}`).on('value', (snapshot) => {
+                    const userData = [];
+                    const user = snapshot.val();
+                    const userId = snapshot.key;
+                    /*userData.push({
+                        key: userId,
+                        email: user.email,
+                        firstName: user.firstName,
+                        lastName: user.lastName,
+                        nickName: user.nickname
+                    });
+                    dataSource = [
+                        ...userData
+                    ]*/
+                    const name = (user.firstName + " " + user.lastName);
+
+                    console.log('userData:', user);
+                    console.log('dataName:', name);
+                    setUserName(name);
+                    setCurrentUser(uid);
+                    setLoged(true)
+                    setIsLoading(true);
+                });
+
                 history.push(Routes.HOME);
-                setLoged(true)
+
             } else {
                 // User is signed out.
                 console.log('user loggedOut');
@@ -65,40 +90,9 @@ const App = () => {
 
         return () => {
             console.log('UNSUBSCRIBE');
+            FIREBASE.db.ref(`users/${currentUser}`).off();
         };
-    });
-
-    useEffect(() => {
-        console.log('Logeado: ', loged);
-        const getUser = async () => {
-            FIREBASE.db.ref(`users/${currentUser}`).on('value', (snapshot) => {
-                const userData = [];
-                const user = snapshot.val();
-                const userId = snapshot.key;
-                userData.push({
-                    key: userId,
-                    email: user.email,
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    nickName: user.nickname
-                });
-                dataSource = [
-                    ...userData
-                ]
-                const name = (dataSource[0].firstName + " " + dataSource[0].lastName);
-
-                console.log('userData:', user);
-                console.log('dataName:', name);
-                setUserName(name);
-
-            });
-        };
-        getUser();
-
-        return () => {
-            FIREBASE.db.ref('users').off();
-        };
-    }, [loged]);
+    }, []);
 
     useEffect(() => {
         let navLinksUser = [];
@@ -131,23 +125,23 @@ const App = () => {
 
     }, [loged]);
 
-
     return (
-
-        <Layout className="layout">
-            <Header>
-                <Nav
-                    navLinks={navLinks}
-                    logo={logo}
-                    hoverBackground="#96E2D9"
-                    linkColor="#FDFFFC"
-                />
-            </Header>
-            <Content>
-                <AppRouter/>
-            </Content>
-            <Footer/>
-        </Layout>
+        <>
+            <Layout className="layout">
+                <Header>
+                    <Nav
+                        navLinks={navLinks}
+                        logo={logo}
+                        hoverBackground="#96E2D9"
+                        linkColor="#FDFFFC"
+                    />
+                </Header>
+                <Content>
+                    <AppRouter/>
+                </Content>
+                <Footer/>
+            </Layout>
+        </>
     );
 }
 
