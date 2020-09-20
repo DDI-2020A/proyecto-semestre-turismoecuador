@@ -16,17 +16,17 @@
 
 }
 
-
 .map-ecuador{
     display:flex;
    padding:50px;
     padding-top: 0;
     align-items: center;
+    
     justify-content: center;
     padding: 50px;
 }
 .map-galapagos path{ 
-    stroke:white;
+    
     stroke:#011627;
     stroke-width:2px;
     transition:fill 0.3s;
@@ -36,7 +36,9 @@
     stroke-width:2px;
     transition:fill 0.3s;
 }
-
+.prueba{
+    border:2px solid;
+}
 .map-route{
     background:#FCE1D6;
      justify-content: center; 
@@ -128,7 +130,7 @@
 
 
 #ECU1{   
-    fill:#F8AF93;;
+    fill:#F8AF93;
 }
 
 #ECU8{

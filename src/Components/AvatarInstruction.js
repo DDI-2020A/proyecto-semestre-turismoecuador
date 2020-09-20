@@ -7,6 +7,8 @@ import {Row, Col} from "antd";
 import avatar0 from "../Images/avatar0.svg" ;
 import avatar1 from "../Images/avatar1.svg" ;
 import avatar2 from "../Images/avatar2.svg" ;
+import Mapsvg from "../Components/Mapsvg" ;
+
 
 const avatars = [
     {
@@ -37,11 +39,13 @@ const AvatarInstruction = ({avatarKey}) => {
         setIsShowing(false);
     }
 
+
+
     return (
         <>
             <Row>
 
-                <Col span={24}>
+                <Col span={12}>
                     <div>
                         {
                             isShowing === true
@@ -70,11 +74,14 @@ const AvatarInstruction = ({avatarKey}) => {
                                         </Col>
                                     </Row>
                                 </Modal>
+                                                    
                             </Col>
                         </Row>
                     </div>
                 </Col>
+
             </Row>
+
         </>
     );
 

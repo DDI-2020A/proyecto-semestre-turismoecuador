@@ -15,7 +15,7 @@ const ModalAvatar = (props) => {
                 <div className="modal-header">
                     <Row>
                         <Col span={22}>
-                        <h3 >Conoce Ecuador de una forma</h3>    
+                        <h3 >Conoce Ecuador de una forma divertida</h3>    
                         </Col >
                         <Col span={2}>
                         

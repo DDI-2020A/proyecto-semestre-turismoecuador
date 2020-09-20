@@ -2,6 +2,7 @@ import React from "react";
 import {Col, Row} from "antd";
 import '../Styles/About.css';
 import { Typography } from 'antd';
+import Mapsvg from "../Components/Mapsvg";
 
 const About = () => {
 
@@ -23,6 +24,9 @@ const About = () => {
                     </Col>
                     <Col xs={2} sm={2} md={2} lg={2} xl={2}/>
                 </Row>
+
+
+
             </div>
         </>
     );
