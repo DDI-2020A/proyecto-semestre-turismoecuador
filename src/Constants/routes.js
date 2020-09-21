@@ -2,7 +2,7 @@ const publicRoutes = {
     HOME: '/',
     GAME: '/juego',
     MAP: '/juego/mapa',
-    QUESTION:'/juego/mapa/preguntas',
+    QUESTION:'/juego/preguntas',
     FORUM: '/foro',
     ABOUT: '/nosotros',
     LOGIN: '/inicioSesion',

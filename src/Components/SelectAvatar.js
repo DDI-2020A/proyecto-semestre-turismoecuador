@@ -44,7 +44,7 @@ const getAvatar = () => {
 
 
 const SelectAvatar = () => {
-    const [avatar, setAvatar] = useState(null);
+    const [avatar, setAvatar] = useState(0);
 
     const handleAvatar = () => {
         const av = document.querySelector('input[name="avatars"]:checked').value;
