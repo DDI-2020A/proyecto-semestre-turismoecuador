@@ -11,37 +11,9 @@ import ModalQuestions from '../Components/ModalQuestions';
 
 const Game = () => {
 
-    const [selectAvatar, setSelectAvatar] = useState(false);
-
-    useEffect(() => {
-        console.log('Avatar seleccionado', selectAvatar)
-    }, [selectAvatar]);
-
-    const handleOnclickContinue = () => {
-        setSelectAvatar(true);
-    };
-
-    const [selectQuestion, setSelectQuestion] = useState(false);
-  
-
-    useEffect(() => {
-        console.log('Region Seleccionada', selectQuestion)
-    }, [selectQuestion]);
-  
-    const handleOnclickQuestion = () => {
-        setSelectQuestion(true);
-    };
-    
-
-
     return (
         <>
-            {
-                selectAvatar === false
-                    ? <SelectAvatar handleOnclickContinue={handleOnclickContinue}/>
-                    : <Mapsvg/>
-            }
-                
+            <SelectAvatar/>
         </>
     );
 }

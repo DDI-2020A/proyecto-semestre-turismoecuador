@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import Routes from "../Constants/routes";
 import Home from "../Pages/Home";
 import Game from "../Pages/Game";
@@ -8,6 +8,8 @@ import About from "../Pages/About";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import NotFound from "../Pages/NotFound";
+import Map from "../Pages/Map";
+import Question from "../Pages/Question";
 
 const AppRoter = () => {
     return (
@@ -17,6 +19,12 @@ const AppRoter = () => {
             </Route>
             <Route exact path={Routes.GAME}>
                 <Game/>
+            </Route>
+            <Route exact path={Routes.MAP + '/:avatar'}>
+                <Map/>
+            </Route>
+            <Route exact path={Routes.QUESTION}>
+                <Question/>
             </Route>
             <Route exact path={Routes.FORUM}>
                 <Forum/>
@@ -31,7 +39,7 @@ const AppRoter = () => {
                 <Register/>
             </Route>
 
-            <Route component={ NotFound } />
+            <Route component={NotFound}/>
         </Switch>
     );
 }

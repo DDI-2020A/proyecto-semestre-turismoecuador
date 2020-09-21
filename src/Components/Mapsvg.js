@@ -6,14 +6,14 @@ import '../Styles/ModalAvatar.scss'
 import AvatarInstruction from '../Components/AvatarInstruction';
 import {Row, Col,Tooltip} from 'antd'
 
-const Mapsvg =({handleOnclickQuestion})=> {
+const Mapsvg =({handleOnclickQuestion, avatarKey})=> {
       const [insularVisible, setInsularVisible] = React.useState(false);
       const [sierraVisible, setSierraVisible] = React.useState(false);
       const [costaVisible, setCostaVisible] = React.useState(false);
       const [amazoniaVisible, setAmazoniaVisible] = React.useState(false);
       
     return (
-       < >
+       <>
        <div className="main-mapa" >
        <Row className="map-route" lg={24}  >
                            
@@ -62,7 +62,7 @@ const Mapsvg =({handleOnclickQuestion})=> {
 
                      <Col xs={24} lg={24}>
 
-                        <AvatarInstruction/>
+                         <AvatarInstruction avatarKey={avatarKey}/>
        
                      </Col>
                 </Row>
