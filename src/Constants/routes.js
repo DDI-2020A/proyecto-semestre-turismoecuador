@@ -6,7 +6,8 @@ const publicRoutes = {
     FORUM: '/foro',
     ABOUT: '/nosotros',
     LOGIN: '/inicioSesion',
-    REGISTER: '/registrar'
+    REGISTER: '/registrar',
+    ORO: '/foro/elOro'
 };
 const privateRoutes = {};
 

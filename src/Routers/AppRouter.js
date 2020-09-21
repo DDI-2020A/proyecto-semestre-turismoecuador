@@ -10,6 +10,7 @@ import Register from "../Pages/Register";
 import NotFound from "../Pages/NotFound";
 import Map from "../Pages/Map";
 import Question from "../Pages/Question";
+import El_Oro from '../Pages/Provinces/El-Oro';
 
 const AppRoter = () => {
     return (
@@ -38,7 +39,9 @@ const AppRoter = () => {
             <Route exact path={Routes.REGISTER}>
                 <Register/>
             </Route>
-
+            <Route exact path={Routes.ORO}>
+                <El_Oro/>
+            </Route>
             <Route component={NotFound}/>
         </Switch>
     );
