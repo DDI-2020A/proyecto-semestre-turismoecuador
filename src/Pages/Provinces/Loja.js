@@ -4,7 +4,7 @@ import FIREBASE from '../../Firebase'
 import '../../Styles/Carousel.scss';
 import '../../Styles/Forum.css';
 
-const ElOro = () => {
+const Loja = () => {
 
     const [ dataSource, setDataSource ] = useState( );
     const [ isLoading, setIsLoading ] = useState( true );
@@ -85,7 +85,7 @@ const ElOro = () => {
                 dataSource
                 ? 
                 dataSource.map((region, index) => (
-                region.key === 'Costa' || region.provinces === 'elOro'?
+                region.key === 'Sierra' || region.provinces === 'loja'?
                 <>
                     <Row gutter={16} justify="end">
                         <Col span={3}>
@@ -94,23 +94,23 @@ const ElOro = () => {
                     </Row>       
                     <Carousel autoplay >
                         <div>
-                            <Card title={ region.provinces.elOro.images.image1.namePlace } bordered={false}>
-                                <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.elOro.images.image1.photoPlace }/>
+                            <Card title={ region.provinces.loja.images.image1.namePlace } bordered={false}>
+                                <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.loja.images.image1.photoPlace }/>
                             </Card>
                         </div>
                         <div>
-                            <Card title={ region.provinces.elOro.images.image2.namePlace } bordered={false}>
-                                <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.elOro.images.image2.photoPlace }/>
+                            <Card title={ region.provinces.loja.images.image2.namePlace } bordered={false}>
+                                <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.loja.images.image2.photoPlace }/>
                             </Card>                        
                         </div>
                         <div>
-                            <Card title={ region.provinces.elOro.images.image3.namePlace } bordered={false}>
-                                <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.elOro.images.image3.photoPlace }/>
+                            <Card title={ region.provinces.loja.images.image3.namePlace } bordered={false}>
+                                <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.loja.images.image3.photoPlace }/>
                             </Card>                        
                         </div>
                         <div>
-                            <Card title={ region.provinces.elOro.images.image4.namePlace } bordered={false}>
-                                <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.elOro.images.image4.photoPlace }/>
+                            <Card title={ region.provinces.loja.images.image4.namePlace } bordered={false}>
+                                <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.loja.images.image4.photoPlace }/>
                             </Card>                    
                         </div>
                     </Carousel>
@@ -124,12 +124,12 @@ const ElOro = () => {
                             </Col>
                             <Col span={8}>
                                 <Card title="Provincia" bordered={true}>
-                                El Oro
+                                Loja
                                 </Card>
                             </Col>
                             <Col span={8}>
                                 <Card title="Capital" bordered={true}>
-                                { region.provinces.elOro.capital }
+                                { region.provinces.loja.capital }
                                 </Card>
                             </Col>
                             </Row>
@@ -137,12 +137,12 @@ const ElOro = () => {
                             <Row gutter={16}>
                             <Col span={12}>
                                 <Card title="Actividades" bordered={true}>
-                                { region.provinces.elOro.activities }
+                                { region.provinces.loja.activities }
                                 </Card>
                             </Col>
                             <Col span={12}>
                                 <Card title="Comida típica" bordered={true}>
-                                { region.provinces.elOro.food }
+                                { region.provinces.loja.food }
                                 </Card>
                             </Col>
                             </Row>
@@ -150,7 +150,7 @@ const ElOro = () => {
                             <Row gutter={16}>
                             <Col span={24}>
                                 <Card title="Descripción" bordered={true}>
-                                { region.provinces.elOro.description }
+                                { region.provinces.loja.description }
                                 </Card>
                             </Col>
                             </Row>                            
@@ -161,4 +161,4 @@ const ElOro = () => {
         </>
     );
 };
-export default ElOro;
+export default Loja;
