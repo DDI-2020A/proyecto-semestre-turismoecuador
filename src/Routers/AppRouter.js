@@ -23,7 +23,7 @@ const AppRoter = () => {
             <Route exact path={Routes.MAP + '/:avatar'}>
                 <Map/>
             </Route>
-            <Route exact path={Routes.QUESTION}>
+            <Route exact path={Routes.QUESTION + '/:region'}>
                 <Question/>
             </Route>
             <Route exact path={Routes.FORUM}>
