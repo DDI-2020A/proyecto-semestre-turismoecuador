@@ -7,7 +7,6 @@ import '../../Styles/Forum.css';
 const Azuay = () => {
 
     const [ dataSource, setDataSource ] = useState( );
-    const [ isLoading, setIsLoading ] = useState( true );
 
     //MODAL COMMENTS
     class App1 extends React.Component {
@@ -56,7 +55,6 @@ const Azuay = () => {
     
     //--------------------
 
-
     useEffect( () => {
         const getProvince = async() => {
           FIREBASE.db.ref( 'regions' ).on( 'value', ( snapshot ) => {
@@ -72,12 +70,13 @@ const Azuay = () => {
             } );
             setDataSource(dataSource);
             console.log('dataSource', dataSource)
-            setIsLoading( false );
           } );
         };
         getProvince();
-        return dataSource;
-      }, [] );
+        return () => {
+          FIREBASE.db.ref('regions').off();
+      };
+      }, []);
 
     return (
         <>

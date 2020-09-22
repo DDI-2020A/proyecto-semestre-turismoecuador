@@ -7,7 +7,6 @@ import '../../Styles/Forum.css';
 const Cañar = () => {
 
     const [ dataSource, setDataSource ] = useState( );
-    const [ isLoading, setIsLoading ] = useState( true );
 
     //MODAL COMMENTS
     class App1 extends React.Component {
@@ -56,28 +55,28 @@ const Cañar = () => {
     
     //--------------------
 
-
     useEffect( () => {
-        const getProvince = async() => {
-          FIREBASE.db.ref( 'regions' ).on( 'value', ( snapshot ) => {
-            const dataSource = [];
-            snapshot.forEach( ( data ) => {
-              const region = data.val();
-              const regionId = data.key;
-              dataSource.push( {
-                key: regionId,
-                color: region.color,
-                provinces: region.provinces
-              } );
+      const getProvince = async() => {
+        FIREBASE.db.ref( 'regions' ).on( 'value', ( snapshot ) => {
+          const dataSource = [];
+          snapshot.forEach( ( data ) => {
+            const region = data.val();
+            const regionId = data.key;
+            dataSource.push( {
+              key: regionId,
+              color: region.color,
+              provinces: region.provinces
             } );
-            setDataSource(dataSource);
-            console.log('dataSource', dataSource)
-            setIsLoading( false );
           } );
-        };
-        getProvince();
-        return dataSource;
-      }, [] );
+          setDataSource(dataSource);
+          console.log('dataSource', dataSource)
+        } );
+      };
+      getProvince();
+      return () => {
+        FIREBASE.db.ref('regions').off();
+    };
+    }, []);
 
     return (
         <>

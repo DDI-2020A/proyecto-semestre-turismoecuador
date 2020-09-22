@@ -7,7 +7,24 @@ import '../../Styles/Forum.css';
 const Bolivar = () => {
 
     const [ dataSource, setDataSource ] = useState( );
-    const [ isLoading, setIsLoading ] = useState( true );
+
+    // -------- CardStyles --------
+
+    const StyleCardPrincipal = { 
+      borderRadius: "16px", 
+      marginRight: "2%",
+      marginLeft: "2%", 
+      boxShadow: "5px 8px 24px 5px rgba(208, 216, 243, 0.6)",
+      backgroundColor: '#F8AF93' 
+    }
+
+    const StyleCard = { 
+      borderRadius: "16px", 
+      marginRight: "5%",
+      marginLeft: "5%", 
+      boxShadow: "5px 8px 24px 5px rgba(208, 216, 243, 0.6)",
+      backgroundColor: '#F8AF93' 
+    }
 
     //MODAL COMMENTS
     class App1 extends React.Component {
@@ -56,7 +73,6 @@ const Bolivar = () => {
     
     //--------------------
 
-
     useEffect( () => {
         const getProvince = async() => {
           FIREBASE.db.ref( 'regions' ).on( 'value', ( snapshot ) => {
@@ -72,12 +88,13 @@ const Bolivar = () => {
             } );
             setDataSource(dataSource);
             console.log('dataSource', dataSource)
-            setIsLoading( false );
           } );
         };
         getProvince();
-        return dataSource;
-      }, [] );
+        return () => {
+          FIREBASE.db.ref('regions').off();
+      };
+      }, []);
 
     return (
         <>
@@ -94,22 +111,22 @@ const Bolivar = () => {
                     </Row>       
                     <Carousel autoplay >
                         <div>
-                            <Card title={ region.provinces.bolívar.images.image1.namePlace } bordered={false}>
+                            <Card title={ region.provinces.bolívar.images.image1.namePlace } bordered={false} style={ StyleCardPrincipal }>
                                 <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.bolívar.images.image1.photoPlace }/>
                             </Card>
                         </div>
                         <div>
-                            <Card title={ region.provinces.bolívar.images.image2.namePlace } bordered={false}>
+                            <Card title={ region.provinces.bolívar.images.image2.namePlace } bordered={false} style={ StyleCardPrincipal }>
                                 <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.bolívar.images.image2.photoPlace }/>
                             </Card>                        
                         </div>
                         <div>
-                            <Card title={ region.provinces.bolívar.images.image3.namePlace } bordered={false}>
+                            <Card title={ region.provinces.bolívar.images.image3.namePlace } bordered={false} style={ StyleCardPrincipal }>
                                 <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.bolívar.images.image3.photoPlace }/>
                             </Card>                        
                         </div>
                         <div>
-                            <Card title={ region.provinces.bolívar.images.image4.namePlace } bordered={false}>
+                            <Card title={ region.provinces.bolívar.images.image4.namePlace } bordered={false} style={ StyleCardPrincipal }>
                                 <img className="contentStyle" alt="exampleImage" key = {index} src={ region.provinces.bolívar.images.image4.photoPlace }/>
                             </Card>                    
                         </div>
@@ -118,17 +135,17 @@ const Bolivar = () => {
                             <br/>
                             <Row gutter={16}>
                             <Col span={8}>
-                                <Card title="Región" bordered={true}>
+                                <Card title="Región" bordered={true} style={ StyleCard }>
                                 { region.key }
                                 </Card>
                             </Col>
                             <Col span={8}>
-                                <Card title="Provincia" bordered={true}>
+                                <Card title="Provincia" bordered={true} style={ StyleCard }>
                                 Bolívar
                                 </Card>
                             </Col>
                             <Col span={8}>
-                                <Card title="Capital" bordered={true}>
+                                <Card title="Capital" bordered={true} style={ StyleCard }>
                                 { region.provinces.bolívar.capital }
                                 </Card>
                             </Col>
@@ -136,12 +153,12 @@ const Bolivar = () => {
                             <br/>
                             <Row gutter={16}>
                             <Col span={12}>
-                                <Card title="Actividades" bordered={true}>
+                                <Card title="Actividades" bordered={true} style={ StyleCard }>
                                 { region.provinces.bolívar.activities }
                                 </Card>
                             </Col>
-                            <Col span={12}>
-                                <Card title="Comida típica" bordered={true}>
+                            <Col key={ `province1-${ index }` } span={12}>
+                                <Card title="Comida típica" bordered={true} style={ StyleCard }>
                                 { region.provinces.bolívar.food }
                                 </Card>
                             </Col>
@@ -149,7 +166,7 @@ const Bolivar = () => {
                             <br/>
                             <Row gutter={16}>
                             <Col span={24}>
-                                <Card title="Descripción" bordered={true}>
+                                <Card title="Descripción" bordered={true} style={ StyleCard }>
                                 { region.provinces.bolívar.description }
                                 </Card>
                             </Col>

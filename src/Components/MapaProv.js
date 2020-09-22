@@ -1,7 +1,7 @@
 import * as React from 'react';
 import 'antd/dist/antd.css';
 import '../Styles/MapaProv.scss'
-import {Row, Col,Tooltip, Button} from 'antd'
+import {Row, Col,Tooltip} from 'antd'
 import {Link} from "react-router-dom";
 import Routes from "../Constants/routes";
 
