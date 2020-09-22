@@ -1,11 +1,17 @@
 @import '~antd/dist/antd.css';
 
 .header{
-    background-color: #001529;
+    background-color: #96E2D9;
     text-align: center;
-    color: #FDFFFC;
+    color: #011627;
     @font-family: '-apple-system';
+    height: 50em;
 }
 .letter{
     font-size: xx-large;
+    padding: 40px 0 0;
+}
+
+.image-about{
+    padding: 0px;
 }

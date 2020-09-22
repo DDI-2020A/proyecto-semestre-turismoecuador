@@ -54,7 +54,7 @@ const QuestionForm = ({region}) => {
         }
 
         return () => {
-            FIREBASE.db.ref(`regions/Sierra/questions/${numberQuestion}`).off();
+            FIREBASE.db.ref(`regions/${region}/questions/${numberQuestion}`).off();
         };
 
     }, [numberQuestion]);
