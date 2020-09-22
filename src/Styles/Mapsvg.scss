@@ -14,7 +14,7 @@
 }
 .main-mapa{
     padding: 50px;
-
+    background-color: #96E2D9;
 }
 
 
@@ -39,18 +39,18 @@
 }
 
 .map-route{
-    background:#FCE1D6;
+    background:#96E2D9;
      justify-content: center; 
-     border:5px solid black;
+     //border:5px solid black;
 }
 
 .map-galapagos path:hover{
-    fill:#F7E400!important; 
+    fill:#FF9F1C!important;
     stroke-linejoin: bevel;
     transform-style: preserve-3d;
 }
 .map-ecuador path:hover{
-    fill:#F7E400  !important;
+    fill:#FF9F1C  !important;
     stroke-linejoin: bevel;
     stroke-width: 3px;
     transform-style: preserve-3d;
@@ -65,8 +65,8 @@
 } 
 
 .line-route-insular path:hover{
-    stroke:yellow !important;
-    fill:yellow;
+    stroke:#FF9F1C !important;
+    fill:#FF9F1C;
     stroke-width: 3px;    
 }
 
@@ -82,8 +82,8 @@
 
 }
 .line-route-sierra path:hover{
-    stroke:yellow !important;
-    fill:yellow;
+    stroke:#FF9F1C !important;
+    fill:#FF9F1C;
     stroke-width: 3px;    
 }
 
@@ -98,8 +98,8 @@
     stroke-width: 4px;
 }
 .line-route-coast path:hover{
-    stroke:yellow !important;
-    fill:yellow;
+    stroke:#FF9F1C !important;
+    fill:#FF9F1C;
     stroke-width: 3px;    
 }
 
@@ -116,8 +116,8 @@
 }
 
 .line-route-amazonia path:hover{
-    stroke:yellow !important;
-    fill:yellow;
+    stroke:#FF9F1C !important;
+    fill:#FF9F1C;
     stroke-width: 4px;    
 }
 
