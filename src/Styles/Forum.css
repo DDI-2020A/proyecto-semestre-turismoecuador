@@ -2,5 +2,12 @@
     width: 100%;
     max-height: 500px;
     color: #FDFFFC;
-    background: #364d79;
+    size: 300;
+}
+.ant-layout-content {
+    background: #E5E5E5;
+}
+.titleSierra {
+    background-color: #FFC370; 
+    padding: 2%;
 }

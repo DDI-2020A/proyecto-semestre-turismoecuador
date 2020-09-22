@@ -11,19 +11,19 @@ const Bolivar = () => {
     // -------- CardStyles --------
 
     const StyleCardPrincipal = { 
-      borderRadius: "16px", 
-      marginRight: "2%",
-      marginLeft: "2%", 
-      boxShadow: "5px 8px 24px 5px rgba(208, 216, 243, 0.6)",
-      backgroundColor: '#F8AF93' 
+      borderRadius: '16px', 
+      marginRight: '2%',
+      marginLeft: '2%', 
+      backgroundColor: '#E5E5E5' 
     }
 
     const StyleCard = { 
-      borderRadius: "16px", 
-      marginRight: "5%",
-      marginLeft: "5%", 
-      boxShadow: "5px 8px 24px 5px rgba(208, 216, 243, 0.6)",
-      backgroundColor: '#F8AF93' 
+      borderRadius: '16px', 
+      marginRight: '5%',
+      marginLeft: '5%', 
+      boxShadow: '-10px -10px #FFC370',
+      backgroundColor: '#FFE7C6',
+      borderColor: '#FFE7C6'
     }
 
     //MODAL COMMENTS
@@ -109,6 +109,7 @@ const Bolivar = () => {
                             <App1 />
                         </Col>
                     </Row>       
+                    <h3 className = "titleSierra">Bolívar</h3>
                     <Carousel autoplay >
                         <div>
                             <Card title={ region.provinces.bolívar.images.image1.namePlace } bordered={false} style={ StyleCardPrincipal }>
@@ -134,17 +135,12 @@ const Bolivar = () => {
                     <div className="site-card-wrapper">
                             <br/>
                             <Row gutter={16}>
-                            <Col span={8}>
+                            <Col span={12}>
                                 <Card title="Región" bordered={true} style={ StyleCard }>
                                 { region.key }
                                 </Card>
                             </Col>
-                            <Col span={8}>
-                                <Card title="Provincia" bordered={true} style={ StyleCard }>
-                                Bolívar
-                                </Card>
-                            </Col>
-                            <Col span={8}>
+                            <Col span={12}>
                                 <Card title="Capital" bordered={true} style={ StyleCard }>
                                 { region.provinces.bolívar.capital }
                                 </Card>
