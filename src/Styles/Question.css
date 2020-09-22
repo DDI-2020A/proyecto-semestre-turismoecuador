@@ -1,5 +1,22 @@
-.option-container{
+.option-container {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.btn-option {
+    width: 20em;
+    margin: 5px;
+}
+
+.ico-trofeo {
+    height: 20em;
+    padding: 40px;
+}
+
+.container-game {
+    display: flex;
+    justify-content: center;
+    background-color: #96E2D9;
+    height: 40rem;
 }

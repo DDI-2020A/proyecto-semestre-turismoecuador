@@ -4,6 +4,9 @@ import FIREBASE from "../Firebase";
 import {Link} from "react-router-dom";
 import '../Styles/Question.css';
 import Routes from "../Constants/routes";
+import trofeo from '../Images/trofeo.svg'
+import medalla from '../Images/medalla.svg'
+import medallaParticipar from '../Images/medalla-2.svg'
 
 const QuestionForm = ({region}) => {
     const [numberQuestion, setNumberQuestion] = useState(0);
@@ -69,7 +72,6 @@ const QuestionForm = ({region}) => {
             setStateQuestion('Fallaste');
             showModal();
         }
-        handleNextQuestion();
     };
     const handleOption = (op) => {
         setAnswer(op);
@@ -98,13 +100,13 @@ const QuestionForm = ({region}) => {
 
     const handleOk = (e) => {
         console.log(e);
-
+        handleNextQuestion();
         setState(false);
     };
 
     const handleCancel = e => {
         console.log(e);
-
+        handleNextQuestion();
         setState(false);
     };
 
@@ -119,43 +121,43 @@ const QuestionForm = ({region}) => {
                             </Col>
                         </Row>
                         <Row>
-                            <Col span={24}>
+                            <Col span={24} style={{textAlign: 'left'}}>
                                 <h1>Puntaje: {newScore}</h1>
                             </Col>
                         </Row>
-                        <Row style={{padding: '10px', backgroundColor: '#96E2D9'}}>
+                        <Row style={{padding: '10px', backgroundColor: '#2EC4B6'}}>
                             <Col span={24}>
                                 <h4>{textQuestion}</h4>
                             </Col>
                         </Row>
-                        <Row style={{background: '#7F8B92', height: '10em'}}>
-                            <Col span={12} className={'option-container'}>
+                        <Row style={{background: '#7F8B92', height: '20em'}}>
+                            <Col xs={24} md={12} className={'option-container'}>
                                 <Button
-                                    className={'btn-continue'}
+                                    className={'btn-continue btn-option'}
                                     onClick={() => handleOption(op1)}
                                 >
                                     {op1}
                                 </Button>
                             </Col>
-                            <Col span={12} className={'option-container'}>
+                            <Col xs={24} md={12} className={'option-container'}>
                                 <Button
-                                    className={'btn-continue'}
+                                    className={'btn-continue btn-option'}
                                     onClick={() => handleOption(op2)}
                                 >
                                     {op2}
                                 </Button>
                             </Col>
-                            <Col span={12} className={'option-container'}>
+                            <Col xs={24} md={12} className={'option-container'}>
                                 <Button
-                                    className={'btn-continue'}
+                                    className={'btn-continue btn-option'}
                                     onClick={() => handleOption(op3)}
                                 >
                                     {op3}
                                 </Button>
                             </Col>
-                            <Col span={12} className={'option-container'}>
+                            <Col xs={24} md={12} className={'option-container'}>
                                 <Button
-                                    className={'btn-continue'}
+                                    className={'btn-continue btn-option'}
                                     onClick={() => handleOption(op4)}
                                 >
                                     {op4}
@@ -164,6 +166,7 @@ const QuestionForm = ({region}) => {
                             <Col span={24}>
                                 <Button
                                     onClick={handleAnswer}
+                                    primary
                                 >
                                     Enviar
                                 </Button>
@@ -180,6 +183,25 @@ const QuestionForm = ({region}) => {
                     </div>
                     : <div>
                         <h1>Fin del Juego</h1>
+                        {
+                            newScore >= (scoreTotal * 0.7)
+                                ? <div>
+                                    <img className={'ico-trofeo'} src={trofeo}/>
+                                    <h1>Felicidades conoces mucho sobre el Ecuador</h1>
+                                </div>
+                                : (
+                                    newScore >= (scoreTotal * 0.5)
+                                        ? <div>
+                                            <img className={'ico-trofeo'} src={medalla}/>
+                                            <h1>Felicidades conoces un poco sobre el Ecuador</h1>
+                                        </div>
+                                        : <div>
+                                            <img className={'ico-trofeo'} src={medallaParticipar}/>
+                                            <h1>Te hace falta conocer más sobre el Ecuador</h1>
+                                            <h1>Te invitamos a seguir navengando en la página para que conozcas más</h1>
+                                        </div>
+                                )
+                        }
                         <h1>Puntaje: {newScore}/{scoreTotal}</h1>
                         <Button
                             className={'btn-continue'}
