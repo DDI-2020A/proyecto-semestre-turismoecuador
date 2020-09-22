@@ -2,12 +2,23 @@
     width: 100%;
     max-height: 500px;
     color: #FDFFFC;
-    size: 300;
 }
 .ant-layout-content {
     background: #E5E5E5;
 }
 .titleSierra {
     background-color: #FFC370; 
+    padding: 2%;
+}
+.titleCosta {
+    background-color: #F7B8BF; 
+    padding: 2%;
+}
+.titleOriente {
+    background-color: #36F59E;  
+    padding: 2%;
+}
+.titleInsular {
+    background-color: #F68860; 
     padding: 2%;
 }
