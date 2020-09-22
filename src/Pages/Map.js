@@ -9,9 +9,9 @@ const Map = () => {
     let {avatar} = useParams();
     console.log('id', avatar);
     return (
-        <>
+        <div style={{backgroundColor: '#96E2D9'}}>
             <Mapsvg avatarKey={avatar}/>
-        </>
+        </div>
     );
 }
 
