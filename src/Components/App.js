@@ -69,6 +69,7 @@ const App = () => {
                         ...userData
                     ]*/
                     const name = (user.firstName + " " + user.lastName);
+                  // const name =( "usuario");
 
                     console.log('userData:', user);
                     console.log('dataName:', name);
