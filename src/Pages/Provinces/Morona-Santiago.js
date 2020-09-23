@@ -10,8 +10,6 @@ const MoronaSantiago = () => {
 
     // -------- CardStyles --------
 
-    //--------------------
-
     const StyleCardPrincipal = {
         borderRadius: '16px',
         marginRight: '2%',
@@ -26,51 +24,6 @@ const MoronaSantiago = () => {
         boxShadow: '-10px -10px #36F59E',
         backgroundColor: '#C9EDDC',
         borderColor: '#C9EDDC'
-    }
-
-    //MODAL COMMENTS
-    class App1 extends React.Component {
-        state = { visible: false };
-
-        showModal = () => {
-            this.setState({
-                visible: true,
-            });
-        };
-
-        handleOk = e => {
-            console.log(e);
-            this.setState({
-                visible: false,
-            });
-        };
-
-        handleCancel = e => {
-            console.log(e);
-            this.setState({
-                visible: false,
-            });
-        };
-
-        render() {
-            return (
-                <>
-                    <Button type="primary" onClick={this.showModal}>
-                        Comentarios
-                    </Button>
-                    <Modal
-                        title="Lista de comentarios"
-                        visible={this.state.visible}
-                        onOk={this.handleOk}
-                        onCancel={this.handleCancel}
-                    >
-                        <p>Some contents...</p>
-                        <p>Some contents...</p>
-                        <p>Some contents...</p>
-                    </Modal>
-                </>
-            );
-        }
     }
 
     useEffect( () => {
@@ -104,11 +57,6 @@ const MoronaSantiago = () => {
                 dataSource.map((region, index) => (
                 region.key === 'Oriente' || region.provinces === 'moronaSantiago'?
                 <>
-                    <Row gutter={16} justify="end">
-                        <Col span={3}>
-                            <App1 />
-                        </Col>
-                    </Row>       
                     <h3 className = "titleOriente">Morona Santiago</h3>
                     <Carousel autoplay >
                         <div>

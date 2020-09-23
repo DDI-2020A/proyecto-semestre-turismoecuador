@@ -24,53 +24,6 @@ const Guayas = () => {
         borderColor: '#FCE2E5'
     }
 
-    //MODAL COMMENTS
-    class App1 extends React.Component {
-        state = { visible: false };
-
-        showModal = () => {
-            this.setState({
-                visible: true,
-            });
-        };
-
-        handleOk = e => {
-            console.log(e);
-            this.setState({
-                visible: false,
-            });
-        };
-
-        handleCancel = e => {
-            console.log(e);
-            this.setState({
-                visible: false,
-            });
-        };
-
-        render() {
-            return (
-                <>
-                    <Button type="primary" onClick={this.showModal}>
-                        Comentarios
-                    </Button>
-                    <Modal
-                        title="Lista de comentarios"
-                        visible={this.state.visible}
-                        onOk={this.handleOk}
-                        onCancel={this.handleCancel}
-                    >
-                        <p>Some contents...</p>
-                        <p>Some contents...</p>
-                        <p>Some contents...</p>
-                    </Modal>
-                </>
-            );
-        }
-    }
-
-    //--------------------
-
     useEffect( () => {
         const getProvince = async() => {
             FIREBASE.db.ref( 'regions' ).on( 'value', ( snapshot ) => {
@@ -102,11 +55,6 @@ const Guayas = () => {
                     dataSource.map((region, index) => (
                         region.key === 'Costa' || region.provinces === 'guayas'?
                             <>
-                                <Row gutter={16} justify="end">
-                                    <Col span={3}>
-                                        <App1 />
-                                    </Col>
-                                </Row>
                                 <h3 className = "titleCosta">Guayas</h3>
                                 <Carousel autoplay >
                                     <div>
