@@ -22,3 +22,15 @@
     background-color: #F68860; 
     padding: 2%;
 }
+.ant-modal-body {
+    background-color: #E5E5E5;
+}
+.ant-modal-footer {
+    background-color: #E5E5E5;
+}
+.ant-modal-header {
+    background-color: #C9C9C9;
+}
+.ant-input {
+    background-color: #C9C9C9;
+}

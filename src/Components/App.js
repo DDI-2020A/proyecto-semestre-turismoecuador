@@ -68,8 +68,8 @@ const App = () => {
                     dataSource = [
                         ...userData
                     ]*/
-                    const name = (user.firstName + " " + user.lastName);
-
+                    const name = (user.firstName + " " + user.lastName);  
+                    
                     console.log('userData:', user);
                     console.log('dataName:', name);
                     setUserName(name);

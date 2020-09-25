@@ -6,8 +6,6 @@ import logo from '../Images/logo.svg'
 
 const About = () => {
 
-    const {Title} = Typography;
-
     return (
         <>
             <div className="header">
